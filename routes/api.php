@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::middleware('api')->get('/', function () {
+    return 'ok';
+});
 Route::group(['namespace' => 'Api'], function () {
     Route::get('/profiles', 'ProfileController@index');
     Route::get('/profiles/{name}', 'ProfileController@show');
