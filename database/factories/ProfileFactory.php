@@ -1,10 +1,11 @@
 <?php
 
 use Faker\Generator as Faker;
+use Halnique\Portfolio\Infrastructure\Eloquent;
 
-$factory->define(App\Entities\Profile::class, function (Faker $faker) {
+$factory->define(Eloquent\Profile::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'name' => $faker->userName,
         'introductions' => $faker->text,
         'icon_url' => $faker->imageUrl(),
     ];

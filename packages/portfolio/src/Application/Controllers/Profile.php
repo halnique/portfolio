@@ -3,6 +3,7 @@
 namespace Halnique\Portfolio\Application\Controllers;
 
 
+use Halnique\Portfolio\Application\UseCases;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -27,12 +28,13 @@ class Profile extends Controller
     }
 
     /**
+     * @param UseCases\Profile\FindByName $findByName
      * @param string $name
      * @return JsonResponse
      */
-    public function show(string $name): JsonResponse
+    public function show(UseCases\Profile\FindByName $findByName, string $name): JsonResponse
     {
-        return response()->json([]);
+        return response()->json($findByName($name));
     }
 
     /**
