@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace Halnique\Portfolio\Application\Controllers;
+
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ProfileController extends ApiController
+class Profile extends Controller
 {
     /**
      * @return JsonResponse
@@ -31,7 +32,7 @@ class ProfileController extends ApiController
      */
     public function show(string $name): JsonResponse
     {
-        return response()->json();
+        return response()->json([]);
     }
 
     /**
