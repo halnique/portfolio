@@ -9,17 +9,21 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+        <testsuite name="Application">
+            <directory suffix="Test.php">./packages/portfolio/tests/Application</directory>
         </testsuite>
 
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+        <testsuite name="Domain">
+            <directory suffix="Test.php">./packages/portfolio/tests/Domain</directory>
+        </testsuite>
+
+        <testsuite name="Infrastructure">
+            <directory suffix="Test.php">./packages/portfolio/tests/Infrastructure</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./app</directory>
+            <directory suffix=".php">./packages/portfolio/src</directory>
         </whitelist>
     </filter>
     <php>
