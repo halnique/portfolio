@@ -20,16 +20,4 @@ class FindByNameTest extends TestCase
         $findByName = new FindByName($repository);
         $this->assertTrue($findByName($name)->equals($profile));
     }
-
-    public function test__invoke_()
-    {
-        $name = $this->faker()->word;
-        $profile = new Domain\Profile(
-            Domain\Profile\Id::of($this->faker()->randomDigitNotNull),
-            Domain\Profile\Name::of($name)
-        );
-        $repository = new Infrastructure\Repositories\Profile($profile);
-        $findByName = new FindByName($repository);
-        $this->assertTrue($findByName($name)->equals($profile));
-    }
 }
