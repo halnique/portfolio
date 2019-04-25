@@ -3,6 +3,7 @@
 namespace Halnique\Portfolio\Domain;
 
 
+use Halnique\Portfolio\Domain\Profile\Introductions;
 use Halnique\Portfolio\Domain\Profile\Name;
 
 final class Profile implements Entity
@@ -11,10 +12,16 @@ final class Profile implements Entity
 
     private $name;
 
-    public function __construct(\Halnique\Portfolio\Domain\Profile\Id $id, Name $name)
-    {
+    private $introductions;
+
+    public function __construct(
+        Profile\Id $id,
+        Name $name,
+        Introductions $introductions
+    ) {
         $this->id = $id;
         $this->name = $name;
+        $this->introductions = $introductions;
     }
 
     public function id(): Id
@@ -27,6 +34,11 @@ final class Profile implements Entity
         return $this->name;
     }
 
+    public function introductions(): Introductions
+    {
+        return $this->introductions;
+    }
+
     public function isSame(Entity $entity): bool
     {
         return $entity instanceof self && $this->id()->equals($entity->id());
@@ -37,6 +49,7 @@ final class Profile implements Entity
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'introductions' => $this->introductions,
         ];
     }
 

@@ -3,6 +3,8 @@
 namespace Halnique\Portfolio\Domain\Profile;
 
 
-final class Id extends \Halnique\Portfolio\Domain\Id
+use Halnique\Portfolio\Domain;
+
+final class Id extends Domain\Id
 {
 }

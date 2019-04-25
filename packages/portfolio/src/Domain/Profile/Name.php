@@ -3,39 +3,19 @@
 namespace Halnique\Portfolio\Domain\Profile;
 
 
-use Halnique\Portfolio\Domain\ValueObject;
+use Halnique\Portfolio\Domain\StringObject;
 
-final class Name implements ValueObject
+final class Name extends StringObject
 {
-    private $name;
+    const MAX_LENGTH = 100;
 
-    private function __construct(string $name)
+    protected static function validate(string $string): void
     {
-        $this->name = $name;
-    }
+        parent::validate($string);
 
-    public static function of(string $name): self
-    {
-        return new self($name);
-    }
-
-    public function value(): string
-    {
-        return $this->name;
-    }
-
-    public function equals(ValueObject $valueObject): bool
-    {
-        return $this->value() === $valueObject->value();
-    }
-
-    public function jsonSerialize(): string
-    {
-        return $this->value();
-    }
-
-    public function __toString(): string
-    {
-        return $this->value();
+        if (strlen($string) > self::MAX_LENGTH) {
+            throw new \DomainException('Make NAME less than ' . self::MAX_LENGTH . ' characters.');
+        }
     }
 }
+

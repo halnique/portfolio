@@ -21,7 +21,11 @@ final class Profile extends Model
 
     public function toDomain(): Domain\Profile
     {
-        return new Domain\Profile(Domain\Profile\Id::of($this->id), Domain\Profile\Name::of($this->name));
+        return new Domain\Profile(
+            Domain\Profile\Id::of($this->id),
+            Domain\Profile\Name::of($this->name),
+            Domain\Profile\Introductions::of($this->introductions)
+        );
     }
 
     public function scopeNameOf(Builder $query, string $name): Builder
