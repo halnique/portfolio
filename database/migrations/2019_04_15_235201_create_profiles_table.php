@@ -19,7 +19,7 @@ class CreateProfilesTable extends Migration
             $table->string('introductions');
             $table->string('icon_url');
             $table->dateTime('created_at')->useCurrent();
-            $table->dateTime('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->dateTime('updated_at')->useCurrent();
         });
     }
 

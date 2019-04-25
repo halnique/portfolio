@@ -20,7 +20,7 @@ class ProfileTest extends TestCase
     public function testScopeNameOf()
     {
         $this->assertEquals(
-            'select * from `profiles` where `name` = ?',
+            'select * from "profiles" where "name" = ?',
             Profile::nameOf($this->faker()->name)->toSql()
         );
     }
