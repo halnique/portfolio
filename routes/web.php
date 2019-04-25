@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('profile');
 });
+
+Route::get('/{any}', function () {
+    return redirect('/');
+})->where('any', '.+');
 
 Auth::routes();
 
