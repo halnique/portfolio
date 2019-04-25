@@ -12,7 +12,8 @@ class ProfileTest extends TestCase
         $this->assertInstanceOf(Profile::class, new Profile(
             Profile\Id::of($this->faker()->randomDigitNotNull),
             Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence)
+            Profile\Introductions::of($this->faker()->sentence),
+            Profile\IconUrl::of($this->faker()->imageUrl())
         ));
     }
 
@@ -22,7 +23,8 @@ class ProfileTest extends TestCase
         $this->assertEquals($id, (new Profile(
             $id,
             Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence)
+            Profile\Introductions::of($this->faker()->sentence),
+            Profile\IconUrl::of($this->faker()->imageUrl())
         ))->id());
     }
 
@@ -32,7 +34,8 @@ class ProfileTest extends TestCase
         $this->assertEquals($name, (new Profile(
             Profile\Id::of($this->faker()->randomDigitNotNull),
             $name,
-            Profile\Introductions::of($this->faker()->sentence)
+            Profile\Introductions::of($this->faker()->sentence),
+            Profile\IconUrl::of($this->faker()->imageUrl())
         ))->name());
     }
 
@@ -42,18 +45,47 @@ class ProfileTest extends TestCase
         $this->assertEquals($introductions, (new Profile(
             Profile\Id::of($this->faker()->randomDigitNotNull),
             Profile\Name::of($this->faker()->name),
-            $introductions
+            $introductions,
+            Profile\IconUrl::of($this->faker()->imageUrl())
         ))->introductions());
+    }
+
+    public function testIconUrl()
+    {
+        $iconUrl = Profile\IconUrl::of($this->faker()->imageUrl());
+        $this->assertEquals($iconUrl, (new Profile(
+            Profile\Id::of($this->faker()->randomDigitNotNull),
+            Profile\Name::of($this->faker()->name),
+            Profile\Introductions::of($this->faker()->sentence),
+            $iconUrl
+        ))->iconUrl());
     }
 
     public function testIsSame()
     {
         $idValue = $this->faker()->randomDigitNotNull;
         $id = Profile\Id::of($idValue);
-        $profile = new Profile($id, Profile\Name::of($this->faker()->name), Profile\Introductions::of($this->faker()->sentence));
+        $profile = new Profile(
+            $id,
+            Profile\Name::of($this->faker()->name),
+            Profile\Introductions::of($this->faker()->sentence),
+            Profile\IconUrl::of($this->faker()->imageUrl())
+        );
         $newId = Profile\Id::of($idValue + 1);
-        $this->assertTrue($profile->isSame(new Profile($id, Profile\Name::of($this->faker()->name), Profile\Introductions::of($this->faker()->sentence))));
-        $this->assertFalse($profile->isSame(new Profile($newId, Profile\Name::of($this->faker()->name), Profile\Introductions::of($this->faker()->sentence))));
+        $this->assertTrue($profile->isSame(
+            new Profile(
+                $id,
+                Profile\Name::of($this->faker()->name),
+                Profile\Introductions::of($this->faker()->sentence),
+                Profile\IconUrl::of($this->faker()->imageUrl())
+            )));
+        $this->assertFalse($profile->isSame(
+            new Profile(
+                $newId,
+                Profile\Name::of($this->faker()->name),
+                Profile\Introductions::of($this->faker()->sentence),
+                Profile\IconUrl::of($this->faker()->imageUrl())
+            )));
     }
 
     public function testJsonSerialize()
@@ -61,7 +93,8 @@ class ProfileTest extends TestCase
         $profileJson = (new Profile(
             Profile\Id::of($this->faker()->randomDigitNotNull),
             Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence)
+            Profile\Introductions::of($this->faker()->sentence),
+            Profile\IconUrl::of($this->faker()->imageUrl())
         ))->jsonSerialize();
         $this->assertArrayHasKey('id', $profileJson);
         $this->assertArrayHasKey('name', $profileJson);
@@ -73,7 +106,8 @@ class ProfileTest extends TestCase
         $profile = new Profile(
             Profile\Id::of($this->faker()->randomDigitNotNull),
             Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence)
+            Profile\Introductions::of($this->faker()->sentence),
+            Profile\IconUrl::of($this->faker()->imageUrl())
         );
         $this->assertJsonStringEqualsJsonString(json_encode($profile), $profile);
     }

@@ -11,8 +11,6 @@ final class Name extends StringObject
 
     protected static function validate(string $string): void
     {
-        parent::validate($string);
-
         if (strlen($string) > self::MAX_LENGTH) {
             throw new \DomainException('Make NAME less than ' . self::MAX_LENGTH . ' characters.');
         }

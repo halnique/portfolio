@@ -15,7 +15,8 @@ class FindByNameTest extends TestCase
         $profile = new Domain\Profile(
             Domain\Profile\Id::of($this->faker()->randomDigitNotNull),
             Domain\Profile\Name::of($name),
-            Domain\Profile\Introductions::of($this->faker()->sentence)
+            Domain\Profile\Introductions::of($this->faker()->sentence),
+            Domain\Profile\IconUrl::of($this->faker()->imageUrl())
         );
         $repository = new Infrastructure\Repositories\Profile($profile);
         $findByName = new FindByName($repository);

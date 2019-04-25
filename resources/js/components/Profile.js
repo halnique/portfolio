@@ -7,6 +7,7 @@ export default class Profile extends Component {
         this.state = {
             name: '',
             introductions: '',
+            iconUrl: '',
         };
     }
 
@@ -15,6 +16,7 @@ export default class Profile extends Component {
             this.setState({
                 name: response.data.name,
                 introductions: response.data.introductions,
+                iconUrl: response.data.iconUrl,
             });
         }).catch(error => {
             console.log(error);
@@ -22,6 +24,10 @@ export default class Profile extends Component {
     }
 
     render() {
+        const iconStyle = {
+            maxWidth: '100%',
+            height: 'auto',
+        };
         return (
             <div className="container">
                 <div className="row justify-content-center">
@@ -29,8 +35,14 @@ export default class Profile extends Component {
                         <div className="card">
                             <div className="card-header">Profile Component</div>
                             <div className="card-body">
-                                <p>{this.state.name}</p>
-                                <p>{this.state.introductions}</p>
+                                <div>
+                                    {this.state.iconUrl ?
+                                        (<img src={this.state.iconUrl}
+                                              alt="Icon"
+                                              style={iconStyle}/>) : ('')}
+                                </div>
+                                <div>{this.state.name}</div>
+                                <div>{this.state.introductions}</div>
                             </div>
                         </div>
                     </div>
