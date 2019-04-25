@@ -2,11 +2,17 @@
 
 namespace HalniqueTest\Portfolio\Application\Controllers;
 
+use Halnique\Portfolio\Infrastructure\Eloquent;
 use HalniqueTest\Portfolio\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\Response;
 
 class ProfileTest extends TestCase
 {
+    use DatabaseMigrations;
+    use DatabaseTransactions;
+
     public function testIndex()
     {
         $this->get('/api/profiles')
@@ -22,7 +28,8 @@ class ProfileTest extends TestCase
 
     public function testShow()
     {
-        $this->get("/api/profiles/{$this->faker()->name}")
+        $profile = factory(Eloquent\Profile::class)->create()->toDomain();
+        $this->get("/api/profiles/{$profile->name()}")
             ->assertStatus(Response::HTTP_OK);
     }
 
