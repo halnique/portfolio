@@ -29,12 +29,12 @@ final class Name implements ValueObject
         return $this->value() === $valueObject->value();
     }
 
-    public function __toString(): string
+    public function jsonSerialize(): string
     {
         return $this->value();
     }
 
-    public function jsonSerialize(): string
+    public function __toString(): string
     {
         return $this->value();
     }

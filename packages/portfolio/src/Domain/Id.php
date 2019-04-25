@@ -34,13 +34,13 @@ abstract class Id implements ValueObject
         return $this->value() === $valueObject->value();
     }
 
-    public function __toString(): string
-    {
-        return (string)$this->value();
-    }
-
     public function jsonSerialize(): int
     {
         return $this->value();
+    }
+
+    public function __toString(): string
+    {
+        return (string)$this->value();
     }
 }

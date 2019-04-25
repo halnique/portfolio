@@ -27,7 +27,7 @@ final class Profile implements Entity
         return $this->name;
     }
 
-    public function equals(Entity $entity): bool
+    public function isSame(Entity $entity): bool
     {
         return $entity instanceof self && $this->id()->equals($entity->id());
     }

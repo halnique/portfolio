@@ -18,6 +18,6 @@ class FindByNameTest extends TestCase
         );
         $repository = new Infrastructure\Repositories\Profile($profile);
         $findByName = new FindByName($repository);
-        $this->assertTrue($findByName($name)->equals($profile));
+        $this->assertTrue($findByName($name)->isSame($profile));
     }
 }
