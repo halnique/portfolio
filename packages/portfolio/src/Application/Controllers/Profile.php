@@ -11,11 +11,12 @@ use Illuminate\Http\Response;
 class Profile extends Controller
 {
     /**
+     * @param UseCases\Profile\FindAll $findAll
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(UseCases\Profile\FindAll $findAll): JsonResponse
     {
-        return response()->json([]);
+        return response()->json($findAll());
     }
 
     /**

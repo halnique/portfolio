@@ -18,7 +18,8 @@ class FindByNameTest extends TestCase
             Domain\Profile\Introductions::of($this->faker()->sentence),
             Domain\Profile\IconUrl::of($this->faker()->imageUrl())
         );
-        $repository = new Infrastructure\Repositories\Profile($profile);
+        $repository = new Infrastructure\Repositories\Profile();
+        $repository->findByName = $profile;
         $findByName = new FindByName($repository);
         $this->assertTrue($findByName($name)->isSame($profile));
     }

@@ -20,6 +20,18 @@ class ProfileTest extends TestCase
         $this->assertInstanceOf(Profile::class, new Profile($eloquent));
     }
 
+    public function testFindAll()
+    {
+        $count = mt_rand(2, 5);
+
+        $eloquent = factory(Eloquent\Profile::class)->make();
+        factory(Eloquent\Profile::class, $count)->create();
+
+        $profiles = (new Profile($eloquent))->findAll();
+        $this->assertCount($count, $profiles);
+        $this->assertContainsOnlyInstancesOf(Domain\Profile::class, $profiles);
+    }
+
     public function testFindByName()
     {
         $name = Domain\Profile\Name::of($this->faker()->name);
