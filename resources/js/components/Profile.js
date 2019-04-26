@@ -24,25 +24,20 @@ export default class Profile extends Component {
     }
 
     render() {
-        const iconStyle = {
-            maxWidth: '100%',
-            height: 'auto',
-        };
         return (
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
-                            <div className="card-header">Profile Component</div>
+                            <div className="card-header">Profile</div>
+                            {this.state.iconUrl ?
+                                (<img src={this.state.iconUrl}
+                                      alt="Icon"
+                                      className="card-img-top"/>) : ('')}
                             <div className="card-body">
-                                <div>
-                                    {this.state.iconUrl ?
-                                        (<img src={this.state.iconUrl}
-                                              alt="Icon"
-                                              style={iconStyle}/>) : ('')}
-                                </div>
-                                <div>{this.state.name}</div>
-                                <div>{this.state.introductions}</div>
+                                <div className="card-title">Name</div>
+                                <p className="card-text">{this.state.name}</p>
+                                <p className="card-text">{this.state.introductions}</p>
                             </div>
                         </div>
                     </div>
