@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/{name}', function () {
-    return view('profile');
-});
+//Route::get('/{name}', function () {
+//    return view('profile');
+//});
 
-Route::get('/{name}/{any}', function () {
+Route::get('/{any}', function () {
     return redirect('/');
 })->where('any', '.+');
 
