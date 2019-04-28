@@ -14,5 +14,12 @@ cache:
 install:
   - travis_retry composer install --no-interaction --no-suggest
 
+before_script:
+  - mkdir -p build/logs
+  - chmod -R 777 build/logs
+
 script:
-  - phpunit
+  - phpunit --coverage-clover build/logs/clover.xml
+
+after_success:
+  - travis_retry php vendor/bin/coveralls
