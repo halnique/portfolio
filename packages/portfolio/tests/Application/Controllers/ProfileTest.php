@@ -15,6 +15,7 @@ class ProfileTest extends TestCase
 
     public function testIndex()
     {
+        factory(Eloquent\Profile::class, mt_rand(2, 5))->create();
         $this->get('/api/profiles')
             ->assertStatus(Response::HTTP_OK);
     }

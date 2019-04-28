@@ -8,12 +8,13 @@ use Halnique\Portfolio\Domain;
 
 class Profile implements Domain\Profile\Repository
 {
-    private $findByName;
+    public $findAll;
 
-    public function __construct(Domain\Profile $findByName)
+    public $findByName;
+
+    public function findAll(): array
     {
-        $this->findByName = $findByName;
-        return $this;
+        return $this->findAll;
     }
 
     public function findByName(Domain\Profile\Name $name): Domain\Profile
