@@ -1,7 +1,7 @@
 language: php
 
 php:
-#  - 7.1
+  - 7.1
   - 7.2
   - 7.3
 
@@ -13,10 +13,6 @@ cache:
 
 install:
   - travis_retry composer install --no-interaction --no-suggest
-
-before_script:
-  - cp .env.example .env
-  - php artisan key:generate
 
 script:
   - phpunit
