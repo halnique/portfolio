@@ -12,10 +12,14 @@
 */
 
 Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/{name}', function () {
     return view('profile');
 });
 
-Route::get('/{any}', function () {
+Route::get('/{name}/{any}', function () {
     return redirect('/');
 })->where('any', '.+');
 

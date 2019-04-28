@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div id="profile"></div>
+                <div id="index"></div>
             </div>
         </div>
     </div>
