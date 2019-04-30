@@ -18,13 +18,13 @@ final class Profile implements Domain\Profile\Repository
 
     public function findAll(): array
     {
-        return $this->eloquent->newQuery()->get()->map(function (Eloquent\Profile $profile) {
+        return $this->eloquent->with('profileTags.Tag')->get()->map(function (Eloquent\Profile $profile) {
             return $profile->toDomain();
         })->all();
     }
 
     public function findByName(Domain\Profile\Name $name): Domain\Profile
     {
-        return $this->eloquent->nameOf($name->value())->first()->toDomain();
+        return $this->eloquent->with('profileTags.Tag')->nameOf($name->value())->first()->toDomain();
     }
 }

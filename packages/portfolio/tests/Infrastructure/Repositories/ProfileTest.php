@@ -41,12 +41,7 @@ class ProfileTest extends TestCase
             'name' => $name,
         ]);
 
-        $entity = new Domain\Profile(
-            Domain\Profile\Id::of($eloquent->id),
-            $name,
-            Domain\Profile\Introductions::of($this->faker()->sentence),
-            Domain\Profile\IconUrl::of($this->faker()->imageUrl())
-        );
+        $entity = $this->factory()->makeProfile(['id' => Domain\Profile\Id::of($eloquent->id)]);
 
         $this->assertTrue($entity->isSame((new Profile($eloquent))->findByName($name)));
     }

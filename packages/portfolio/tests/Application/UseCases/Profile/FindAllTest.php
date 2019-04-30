@@ -4,6 +4,7 @@ namespace HalniqueTest\Portfolio\Application\UseCases\Profile;
 
 use Halnique\Portfolio\Application\UseCases\Profile\FindAll;
 use Halnique\Portfolio\Domain;
+use Halnique\Portfolio\Infrastructure\Eloquent;
 use HalniqueTest\Portfolio\Infrastructure;
 use HalniqueTest\Portfolio\TestCase;
 
@@ -15,12 +16,7 @@ class FindAllTest extends TestCase
 
         $profiles = [];
         for ($i = 0; $i < $count; $i++) {
-            $profiles[] = new Domain\Profile(
-                Domain\Profile\Id::of($this->faker()->randomDigitNotNull),
-                Domain\Profile\Name::of($this->faker()->word),
-                Domain\Profile\Introductions::of($this->faker()->sentence),
-                Domain\Profile\IconUrl::of($this->faker()->imageUrl())
-            );
+            $profiles[] = $this->factory()->makeProfile();
         }
         $repository = new Infrastructure\Repositories\Profile();
         $repository->findAll = $profiles;

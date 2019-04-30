@@ -1,8 +1,8 @@
 <?php
 
-namespace HalniqueTest\Portfolio\Domain\Profile;
+namespace HalniqueTest\Portfolio\Domain\ProfileTag;
 
-use Halnique\Portfolio\Domain\Profile\Id;
+use Halnique\Portfolio\Domain\ProfileTag\Id;
 use HalniqueTest\Portfolio\TestCase;
 
 class IdTest extends TestCase

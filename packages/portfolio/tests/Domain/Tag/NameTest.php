@@ -1,8 +1,8 @@
 <?php
 
-namespace HalniqueTest\Portfolio\Domain\Profile;
+namespace HalniqueTest\Portfolio\Domain\Tag;
 
-use Halnique\Portfolio\Domain\Profile\Name;
+use Halnique\Portfolio\Domain\Tag\Name;
 use HalniqueTest\Portfolio\TestCase;
 
 class NameTest extends TestCase

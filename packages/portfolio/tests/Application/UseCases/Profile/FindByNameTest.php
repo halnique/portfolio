@@ -12,12 +12,7 @@ class FindByNameTest extends TestCase
     public function test__invoke()
     {
         $name = $this->faker()->word;
-        $profile = new Domain\Profile(
-            Domain\Profile\Id::of($this->faker()->randomDigitNotNull),
-            Domain\Profile\Name::of($name),
-            Domain\Profile\Introductions::of($this->faker()->sentence),
-            Domain\Profile\IconUrl::of($this->faker()->imageUrl())
-        );
+        $profile = $this->factory()->makeProfile();
         $repository = new Infrastructure\Repositories\Profile();
         $repository->findByName = $profile;
         $findByName = new FindByName($repository);

@@ -8,5 +8,9 @@ $factory->define(Eloquent\Profile::class, function (Faker $faker) {
         'name' => $faker->userName,
         'introductions' => $faker->text,
         'icon_url' => $faker->imageUrl(),
+        'github' => $faker->word,
+        'twitter' => $faker->word,
+        'qiita' => $faker->word,
+        'hatena' => $faker->word,
     ];
 });

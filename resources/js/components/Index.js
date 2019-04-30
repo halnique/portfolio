@@ -21,15 +21,36 @@ export default class Index extends Component {
 
     render() {
         const profiles = this.state.profiles.map(profile => {
+            const styleIntroductions = {
+                whiteSpace: 'pre-line',
+            };
             return (
-                <div key={profile.id} className="card">
-                    <div className="card-header">Profile</div>
-                    <img src={profile.iconUrl}
-                         alt="Icon"
-                         className="card-img-top"/>
-                    <div className="card-body">
-                        <div className="card-title">Name: {profile.name}</div>
-                        <p className="card-text">{profile.introductions}</p>
+                <div key={profile.id} className="card-group">
+                    <div className="card">
+                        <div className="card-header">{profile.name}</div>
+                        <img src={profile.iconUrl}
+                             alt="Icon"
+                             className="card-img-top"/>
+                    </div>
+                    <div className="card">
+                        <div className="card-body">
+                            <p className="card-text" style={styleIntroductions}>{profile.introductions}</p>
+                            <a href={profile.github.url} className="card-link"
+                               target="_blank">GitHub</a>
+                            <a href={profile.twitter.url} className="card-link"
+                               target="_blank">Twitter</a>
+                            <a href={profile.qiita.url} className="card-link"
+                               target="_blank">Qiita</a>
+                            <a href={profile.hatena.url} className="card-link"
+                               target="_blank">はてなブログ</a>
+                            <div className="card-text">
+                                {profile.tags.map(tag => {
+                                    return (
+                                        <span key={tag.id} className="mr-2 badge badge-secondary">#{tag.name}</span>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             );
