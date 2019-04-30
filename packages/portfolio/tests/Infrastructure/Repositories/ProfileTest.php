@@ -45,7 +45,11 @@ class ProfileTest extends TestCase
             Domain\Profile\Id::of($eloquent->id),
             $name,
             Domain\Profile\Introductions::of($this->faker()->sentence),
-            Domain\Profile\IconUrl::of($this->faker()->imageUrl())
+            Domain\Profile\IconUrl::of($this->faker()->imageUrl()),
+            Domain\Profile\Github::of($this->faker()->word),
+            Domain\Profile\Twitter::of($this->faker()->word),
+            Domain\Profile\Qiita::of($this->faker()->word),
+            Domain\Profile\Hatena::of($this->faker()->word)
         );
 
         $this->assertTrue($entity->isSame((new Profile($eloquent))->findByName($name)));

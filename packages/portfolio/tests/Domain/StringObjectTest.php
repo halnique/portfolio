@@ -26,19 +26,19 @@ class StringObjectTest extends TestCase
     {
         $string = $this->faker()->word;
         $this->assertTrue(StringObject::of($string)->equals(StringObject::of($string)));
-        $newString = $this->faker()->name;
+        $newString = $this->faker()->word;
         $this->assertFalse(StringObject::of($string)->equals(StringObject::of($newString)));
-    }
-
-    public function test__toString()
-    {
-        $string = $this->faker()->word;
-        $this->assertEquals($string, StringObject::of($string));
     }
 
     public function testJsonSerialize()
     {
         $string = $this->faker()->word;
         $this->assertEquals(json_encode($string), json_encode(StringObject::of($string)));
+    }
+
+    public function test__toString()
+    {
+        $string = $this->faker()->word;
+        $this->assertEquals($string, StringObject::of($string));
     }
 }

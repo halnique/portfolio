@@ -18,6 +18,10 @@ class CreateProfilesTable extends Migration
             $table->string('name');
             $table->string('introductions');
             $table->string('icon_url');
+            $table->string('github');
+            $table->string('twitter');
+            $table->string('qiita');
+            $table->string('hatena');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at')->useCurrent();
         });

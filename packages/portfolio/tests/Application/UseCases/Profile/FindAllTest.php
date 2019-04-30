@@ -19,7 +19,11 @@ class FindAllTest extends TestCase
                 Domain\Profile\Id::of($this->faker()->randomDigitNotNull),
                 Domain\Profile\Name::of($this->faker()->word),
                 Domain\Profile\Introductions::of($this->faker()->sentence),
-                Domain\Profile\IconUrl::of($this->faker()->imageUrl())
+                Domain\Profile\IconUrl::of($this->faker()->imageUrl()),
+                Domain\Profile\Github::of($this->faker()->word),
+                Domain\Profile\Twitter::of($this->faker()->word),
+                Domain\Profile\Qiita::of($this->faker()->word),
+                Domain\Profile\Hatena::of($this->faker()->word)
             );
         }
         $repository = new Infrastructure\Repositories\Profile();
