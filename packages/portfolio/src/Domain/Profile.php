@@ -29,6 +29,8 @@ final class Profile implements Entity
 
     private $hatena;
 
+    private $tags;
+
     public function __construct(
         Profile\Id $id,
         Name $name,
@@ -37,7 +39,8 @@ final class Profile implements Entity
         Github $github,
         Twitter $twitter,
         Qiita $qiita,
-        Hatena $hatena
+        Hatena $hatena,
+        TagList $tags
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -47,6 +50,7 @@ final class Profile implements Entity
         $this->twitter = $twitter;
         $this->qiita = $qiita;
         $this->hatena = $hatena;
+        $this->tags = $tags;
     }
 
     public function id(): Id
@@ -89,6 +93,11 @@ final class Profile implements Entity
         return $this->hatena;
     }
 
+    public function tags(): TagList
+    {
+        return $this->tags;
+    }
+
     public function isSame(Entity $entity): bool
     {
         return $entity instanceof self && $this->id()->equals($entity->id());
@@ -105,6 +114,7 @@ final class Profile implements Entity
             'twitter' => $this->twitter,
             'qiita' => $this->qiita,
             'hatena' => $this->hatena,
+            'tags' => $this->tags,
         ];
     }
 

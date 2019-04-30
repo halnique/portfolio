@@ -9,189 +9,77 @@ class ProfileTest extends TestCase
 {
     public function test__construct()
     {
-        $this->assertInstanceOf(Profile::class, new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ));
+        $this->assertInstanceOf(Profile::class, $this->factory()->makeProfile());
     }
 
     public function testId()
     {
         $id = Profile\Id::of($this->faker()->randomDigitNotNull);
-        $this->assertEquals($id, (new Profile(
-            $id,
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ))->id());
+        $this->assertEquals($id, $this->factory()->makeProfile(['id' => $id])->id());
     }
 
     public function testName()
     {
         $name = Profile\Name::of($this->faker()->name);
-        $this->assertEquals($name, (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            $name,
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ))->name());
+        $this->assertEquals($name, $this->factory()->makeProfile(['name' => $name])->name());
     }
 
     public function testIntroductions()
     {
         $introductions = Profile\Introductions::of($this->faker()->sentence);
-        $this->assertEquals($introductions, (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            $introductions,
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ))->introductions());
+        $this->assertEquals($introductions,
+            $this->factory()->makeProfile(['introductions' => $introductions])->introductions());
     }
 
     public function testIconUrl()
     {
         $iconUrl = Profile\IconUrl::of($this->faker()->imageUrl());
-        $this->assertEquals($iconUrl, (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            $iconUrl,
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ))->iconUrl());
+        $this->assertEquals($iconUrl, $this->factory()->makeProfile(['iconUrl' => $iconUrl])->iconUrl());
     }
 
     public function testGithub()
     {
         $github = Profile\Github::of($this->faker()->word);
-        $this->assertEquals($github, (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            $github,
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ))->github());
+        $this->assertEquals($github, $this->factory()->makeProfile(['github' => $github])->github());
     }
 
     public function testTwitter()
     {
         $twitter = Profile\Twitter::of($this->faker()->word);
-        $this->assertEquals($twitter, (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            $twitter,
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ))->twitter());
+        $this->assertEquals($twitter, $this->factory()->makeProfile(['twitter' => $twitter])->twitter());
     }
 
     public function testQiita()
     {
         $qiita = Profile\Qiita::of($this->faker()->word);
-        $this->assertEquals($qiita, (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            $qiita,
-            Profile\Hatena::of($this->faker()->word)
-        ))->qiita());
+        $this->assertEquals($qiita, $this->factory()->makeProfile(['qiita' => $qiita])->qiita());
     }
 
     public function testHatena()
     {
         $hatena = Profile\Hatena::of($this->faker()->word);
-        $this->assertEquals($hatena, (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            $hatena
-        ))->hatena());
+        $this->assertEquals($hatena, $this->factory()->makeProfile(['hatena' => $hatena])->hatena());
+    }
+
+    public function testTags()
+    {
+        $tags = $this->factory()->makeTagList();
+        $this->assertEquals($tags, $this->factory()->makeProfile(['tags' => $tags])->tags());
     }
 
     public function testIsSame()
     {
         $idValue = $this->faker()->randomDigitNotNull;
         $id = Profile\Id::of($idValue);
-        $profile = new Profile(
-            $id,
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        );
+        $profile = $this->factory()->makeProfile(['id' => $id]);
         $newId = Profile\Id::of($idValue + 1);
-        $this->assertTrue($profile->isSame(
-            new Profile(
-                $id,
-                Profile\Name::of($this->faker()->name),
-                Profile\Introductions::of($this->faker()->sentence),
-                Profile\IconUrl::of($this->faker()->imageUrl()),
-                Profile\Github::of($this->faker()->word),
-                Profile\Twitter::of($this->faker()->word),
-                Profile\Qiita::of($this->faker()->word),
-                Profile\Hatena::of($this->faker()->word)
-            )));
-        $this->assertFalse($profile->isSame(
-            new Profile(
-                $newId,
-                Profile\Name::of($this->faker()->name),
-                Profile\Introductions::of($this->faker()->sentence),
-                Profile\IconUrl::of($this->faker()->imageUrl()),
-                Profile\Github::of($this->faker()->word),
-                Profile\Twitter::of($this->faker()->word),
-                Profile\Qiita::of($this->faker()->word),
-                Profile\Hatena::of($this->faker()->word)
-            )));
+        $this->assertTrue($profile->isSame($this->factory()->makeProfile(['id' => $id])));
+        $this->assertFalse($profile->isSame($this->factory()->makeProfile(['id' => $newId])));
     }
 
     public function testJsonSerialize()
     {
-        $profileJson = (new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        ))->jsonSerialize();
+        $profileJson = $this->factory()->makeProfile()->jsonSerialize();
         $this->assertArrayHasKey('id', $profileJson);
         $this->assertArrayHasKey('name', $profileJson);
         $this->assertArrayHasKey('introductions', $profileJson);
@@ -204,16 +92,7 @@ class ProfileTest extends TestCase
 
     public function test__toString()
     {
-        $profile = new Profile(
-            Profile\Id::of($this->faker()->randomDigitNotNull),
-            Profile\Name::of($this->faker()->name),
-            Profile\Introductions::of($this->faker()->sentence),
-            Profile\IconUrl::of($this->faker()->imageUrl()),
-            Profile\Github::of($this->faker()->word),
-            Profile\Twitter::of($this->faker()->word),
-            Profile\Qiita::of($this->faker()->word),
-            Profile\Hatena::of($this->faker()->word)
-        );
+        $profile = $this->factory()->makeProfile();
         $this->assertJsonStringEqualsJsonString(json_encode($profile), $profile);
     }
 }

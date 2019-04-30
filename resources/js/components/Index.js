@@ -21,6 +21,9 @@ export default class Index extends Component {
 
     render() {
         const profiles = this.state.profiles.map(profile => {
+            const styleIntroductions = {
+                whiteSpace: 'pre-line',
+            };
             return (
                 <div key={profile.id} className="card-group">
                     <div className="card">
@@ -31,7 +34,7 @@ export default class Index extends Component {
                     </div>
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-text">{profile.introductions}</p>
+                            <p className="card-text" style={styleIntroductions}>{profile.introductions}</p>
                             <a href={profile.github.url} className="card-link"
                                target="_blank">GitHub</a>
                             <a href={profile.twitter.url} className="card-link"
@@ -40,6 +43,13 @@ export default class Index extends Component {
                                target="_blank">Qiita</a>
                             <a href={profile.hatena.url} className="card-link"
                                target="_blank">はてなブログ</a>
+                            <div className="card-text">
+                                {profile.tags.map(tag => {
+                                    return (
+                                        <span key={tag.id} className="mr-2 badge badge-secondary">#{tag.name}</span>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -48,7 +58,7 @@ export default class Index extends Component {
         return (
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-md-12">
+                    <div className="col-md-10">
                         {profiles}
                     </div>
                 </div>
