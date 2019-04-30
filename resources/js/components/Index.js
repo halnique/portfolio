@@ -21,6 +21,9 @@ export default class Index extends Component {
 
     render() {
         const profiles = this.state.profiles.map(profile => {
+            const htmlIntroductions = {
+                __html: profile.introductions,
+            };
             const styleIntroductions = {
                 whiteSpace: 'pre-line',
             };
@@ -34,7 +37,7 @@ export default class Index extends Component {
                     </div>
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-text" style={styleIntroductions}>{profile.introductions}</p>
+                            <p dangerouslySetInnerHTML={htmlIntroductions} className="card-text" style={styleIntroductions}></p>
                             <a href={profile.github.url} className="card-link"
                                target="_blank">GitHub</a>
                             <a href={profile.twitter.url} className="card-link"
