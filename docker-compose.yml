@@ -18,8 +18,8 @@ services:
       - phpsocket:/var/run
     tty: true
     ports:
-      - "8080:80"
-      - "4443:443"
+      - "80:80"
+      - "443:443"
     depends_on:
       - workspace
       - php-fpm
@@ -36,7 +36,6 @@ services:
     image: mysql:5.7
     volumes:
       - mysql:/var/lib/mysql
-      - ./docker/mysql/etc/mysql/conf.d:/etc/mysql/conf.d
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
