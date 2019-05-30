@@ -12,15 +12,18 @@ export default class Profile extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/profiles/halnique').then((response) => {
-            this.setState({
-                name: response.data.name,
-                introductions: response.data.introductions,
-                iconUrl: response.data.iconUrl,
-            });
-        }).catch(error => {
-            console.log(error);
-        });
+        fetch(
+            '/api/profiles/halnique',
+            {
+                method: 'GET',
+            },
+        ).then(response => response.json(),
+        ).then(json => this.setState({
+                name: json.name,
+                introductions: json.introductions,
+                iconUrl: json.iconUrl,
+            }),
+        ).catch(error => console.log(error));
     }
 
     render() {
