@@ -10,13 +10,16 @@ export default class Index extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/profiles').then((response) => {
-            this.setState({
-                profiles: response.data,
-            });
-        }).catch(error => {
-            console.log(error);
-        });
+        fetch(
+            '/api/profiles',
+            {
+                method: 'GET',
+            },
+        ).then(response => response.json(),
+        ).then(json => this.setState({
+                profiles: json,
+            }),
+        ).catch(error => console.log(error));
     }
 
     render() {
@@ -37,7 +40,9 @@ export default class Index extends Component {
                     </div>
                     <div className="card">
                         <div className="card-body">
-                            <p dangerouslySetInnerHTML={htmlIntroductions} className="card-text" style={styleIntroductions}></p>
+                            <p dangerouslySetInnerHTML={htmlIntroductions}
+                               className="card-text"
+                               style={styleIntroductions}></p>
                             <a href={profile.github.url} className="card-link"
                                target="_blank">GitHub</a>
                             <a href={profile.twitter.url} className="card-link"
@@ -49,7 +54,8 @@ export default class Index extends Component {
                             <div className="card-text">
                                 {profile.tags.map(tag => {
                                     return (
-                                        <span key={tag.id} className="mr-2 badge badge-secondary">#{tag.name}</span>
+                                        <span key={tag.id}
+                                              className="mr-2 badge badge-secondary">#{tag.name}</span>
                                     );
                                 })}
                             </div>
