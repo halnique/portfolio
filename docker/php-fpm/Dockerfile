@@ -4,7 +4,12 @@ LABEL maintainer="halnique <shunsuke4dev@gmail.com>"
 
 USER root
 
-RUN docker-php-ext-install pdo_mysql
+RUN apk update && apk upgrade \
+ && apk add --no-cache make g++ autoconf
+
+RUN pecl install apcu \
+ && docker-php-ext-enable apcu \
+ && docker-php-ext-install pdo_mysql
 
 ARG USER=nginx
 ARG AGENT_UID=1000

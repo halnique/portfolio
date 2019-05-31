@@ -31,8 +31,9 @@ class ProfileTagTest extends TestCase
         ]);
 
         $profileTags = (new ProfileTag($eloquent))->findByProfileId($profileId);
-        $this->assertCount($count, $profileTags);
-        $this->assertContainsOnlyInstancesOf(Domain\ProfileTag::class, $profileTags);
+        $this->assertInstanceOf(Domain\ProfileTagList::class, $profileTags);
+        $this->assertCount($count, $profileTags->value());
+        $this->assertContainsOnlyInstancesOf(Domain\ProfileTag::class, $profileTags->value());
     }
 
     public function testFindByTagId()
@@ -47,7 +48,8 @@ class ProfileTagTest extends TestCase
         ]);
 
         $profileTags = (new ProfileTag($eloquent))->findByTagId($tagId);
-        $this->assertCount($count, $profileTags);
-        $this->assertContainsOnlyInstancesOf(Domain\ProfileTag::class, $profileTags);
+        $this->assertInstanceOf(Domain\ProfileTagList::class, $profileTags);
+        $this->assertCount($count, $profileTags->value());
+        $this->assertContainsOnlyInstancesOf(Domain\ProfileTag::class, $profileTags->value());
     }
 }

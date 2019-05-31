@@ -6,7 +6,9 @@ USER root
 
 RUN apt full-upgrade
 
-RUN docker-php-ext-install pdo_mysql
+RUN pecl install xdebug \
+ && docker-php-ext-enable xdebug \
+ && docker-php-ext-install pdo_mysql
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \

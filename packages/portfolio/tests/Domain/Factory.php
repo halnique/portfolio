@@ -36,14 +36,38 @@ class Factory
         return $this->applyAttributes($profile, $attributes);
     }
 
+    public function makeProfileList(array $attributes = []): Domain\ProfileList
+    {
+        $profiles = [];
+        for ($id = 0; $id < $this->faker->randomDigit; $id++) {
+            $profiles[] = $this->makeProfile(['id' => $id + 1]);
+        }
+
+        $profileList = Domain\ProfileList::of($profiles);
+
+        return $this->applyAttributes($profileList, $attributes);
+    }
+
     public function makeTag(array $attributes = []): Domain\Tag
     {
         $tag = new Domain\Tag(
             Domain\Tag\Id::of($this->faker->randomDigitNotNull),
-            Domain\Tag\Name::of($this->faker->word)
+            Domain\Tag\Name::of($this->faker->text(Domain\Tag\Name::MAX_LENGTH))
         );
 
         return $this->applyAttributes($tag, $attributes);
+    }
+
+    public function makeTagList(array $attributes = []): Domain\TagList
+    {
+        $tags = [];
+        for ($id = 0; $id < $this->faker->randomDigit; $id++) {
+            $tags[] = $this->makeTag(['id' => $id + 1]);
+        }
+
+        $tagList = Domain\TagList::of($tags);
+
+        return $this->applyAttributes($tagList, $attributes);
     }
 
     public function makeProfileTag(array $attributes = []): Domain\ProfileTag
@@ -57,19 +81,16 @@ class Factory
         return $this->applyAttributes($tag, $attributes);
     }
 
-    public function makeTagList(array $attributes = []): Domain\TagList
+    public function makeProfileTagList(array $attributes = []): Domain\ProfileTagList
     {
-        $tags = [];
+        $profileTags = [];
         for ($id = 0; $id < $this->faker->randomDigit; $id++) {
-            $tags[] = new Domain\Tag(
-                Domain\Tag\Id::of($id + 1),
-                Domain\Tag\Name::of($this->faker->text(Domain\Tag\Name::MAX_LENGTH))
-            );
+            $profileTags[] = $this->makeProfileTag(['id' => $id + 1]);
         }
 
-        $tagList = Domain\TagList::of($tags);
+        $profileTagList = Domain\ProfileTagList::of($profileTags);
 
-        return $this->applyAttributes($tagList, $attributes);
+        return $this->applyAttributes($profileTagList, $attributes);
     }
 
     private function applyAttributes($object, array $attributes)

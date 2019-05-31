@@ -11,18 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::group(['namespace' => '\App\Http\Controllers'], function () {
+    Auth::routes();
+
+    Route::get('/', 'IndexController@index')->name('index');
+    Route::get('/{any}', 'IndexController@redirect')->name('redirect')->where('any', '.+');
 });
-
-//Route::get('/{name}', function () {
-//    return view('profile');
-//});
-
-Route::get('/{any}', function () {
-    return redirect('/');
-})->where('any', '.+');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
