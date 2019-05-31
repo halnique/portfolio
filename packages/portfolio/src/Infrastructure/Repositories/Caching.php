@@ -23,12 +23,7 @@ trait Caching
      */
     public function fetchFromCache(string $key, \Closure $notFoundCallback)
     {
-        $data = null;
-
-        try {
-            $data = cache($key);
-        } catch (\Throwable $e) {
-        }
+        $data = cache($key);
 
         if (!$data) {
             $data = $notFoundCallback();
