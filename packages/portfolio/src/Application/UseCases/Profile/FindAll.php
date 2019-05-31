@@ -3,21 +3,21 @@
 namespace Halnique\Portfolio\Application\UseCases\Profile;
 
 
-use Halnique\Portfolio\Domain\Profile;
+use Halnique\Portfolio\Domain;
 
 class FindAll
 {
     private $repository;
 
-    public function __construct(Profile\Repository $repository)
+    public function __construct(Domain\Profile\Repository $repository)
     {
         $this->repository = $repository;
     }
 
     /**
-     * @return Profile[]
+     * @return Domain\ProfileList
      */
-    public function __invoke(): array
+    public function __invoke(): Domain\ProfileList
     {
         return $this->repository->findAll();
     }

@@ -16,11 +16,13 @@ final class Profile implements Domain\Profile\Repository
         $this->eloquent = $eloquent;
     }
 
-    public function findAll(): array
+    public function findAll(): Domain\ProfileList
     {
-        return $this->eloquent->with('profileTags.Tag')->get()->map(function (Eloquent\Profile $profile) {
+        $profiles = $this->eloquent->with('profileTags.Tag')->get()->map(function (Eloquent\Profile $profile) {
             return $profile->toDomain();
         })->all();
+
+        return Domain\ProfileList::of($profiles);
     }
 
     public function findByName(Domain\Profile\Name $name): Domain\Profile

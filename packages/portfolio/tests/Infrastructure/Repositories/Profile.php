@@ -12,7 +12,7 @@ class Profile implements Domain\Profile\Repository
 
     public $findByName;
 
-    public function findAll(): array
+    public function findAll(): Domain\ProfileList
     {
         return $this->findAll;
     }

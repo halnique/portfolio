@@ -4,13 +4,11 @@ namespace Halnique\Portfolio\Domain\Profile;
 
 
 use Halnique\Portfolio\Domain\Profile;
+use Halnique\Portfolio\Domain\ProfileList;
 
 interface Repository
 {
-    /**
-     * @return Profile[]
-     */
-    public function findAll(): array;
+    public function findAll(): ProfileList;
 
     public function findByName(Name $name): Profile;
 }

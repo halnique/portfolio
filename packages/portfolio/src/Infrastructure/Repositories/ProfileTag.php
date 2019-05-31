@@ -16,17 +16,21 @@ final class ProfileTag implements Domain\ProfileTag\Repository
         $this->eloquent = $eloquent;
     }
 
-    public function findByProfileId(Domain\Profile\Id $profileId): array
+    public function findByProfileId(Domain\Profile\Id $profileId): Domain\ProfileTagList
     {
-        return $this->eloquent->profileIdOf($profileId->value())->get()->map(function (Eloquent\ProfileTag $profileTag) {
+        $profileTags = $this->eloquent->profileIdOf($profileId->value())->get()->map(function (Eloquent\ProfileTag $profileTag) {
             return $profileTag->toDomain();
         })->all();
+
+        return Domain\ProfileTagList::of($profileTags);
     }
 
-    public function findByTagId(Domain\Tag\Id $tagId): array
+    public function findByTagId(Domain\Tag\Id $tagId): Domain\ProfileTagList
     {
-        return $this->eloquent->tagIdOf($tagId->value())->get()->map(function (Eloquent\ProfileTag $profileTag) {
+        $profileTags = $this->eloquent->tagIdOf($tagId->value())->get()->map(function (Eloquent\ProfileTag $profileTag) {
             return $profileTag->toDomain();
         })->all();
+
+        return Domain\ProfileTagList::of($profileTags);
     }
 }

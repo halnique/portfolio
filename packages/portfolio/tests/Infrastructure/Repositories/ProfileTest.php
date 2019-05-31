@@ -28,8 +28,9 @@ class ProfileTest extends TestCase
         factory(Eloquent\Profile::class, $count)->create();
 
         $profiles = (new Profile($eloquent))->findAll();
-        $this->assertCount($count, $profiles);
-        $this->assertContainsOnlyInstancesOf(Domain\Profile::class, $profiles);
+        $this->assertInstanceOf(Domain\ProfileList::class, $profiles);
+        $this->assertCount($count, $profiles->value());
+        $this->assertContainsOnlyInstancesOf(Domain\Profile::class, $profiles->value());
     }
 
     public function testFindByName()

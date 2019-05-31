@@ -7,7 +7,7 @@ use Halnique\Portfolio\Domain;
 
 interface Repository
 {
-    public function findByProfileId(Domain\Profile\Id $profileId): array;
+    public function findByProfileId(Domain\Profile\Id $profileId): Domain\ProfileTagList;
 
-    public function findByTagId(Domain\Tag\Id $tagId): array;
+    public function findByTagId(Domain\Tag\Id $tagId): Domain\ProfileTagList;
 }
