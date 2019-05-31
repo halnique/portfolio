@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'Halnique\Portfolio\Application\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

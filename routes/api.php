@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,18 +11,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::middleware('api')->get('/', function () {
-    return 'ok';
-});
-Route::group(['namespace' => '\Halnique\Portfolio\Application\Controllers'], function () {
-    Route::get('/profiles', 'Profile@index');
-    Route::get('/profiles/{name}', 'Profile@show');
-    Route::group(['middleware' => ['auth']], function () {
-        Route::post('/profiles', 'Profile@store');
-        Route::put('/profiles/{name}', 'Profile@update');
-        Route::delete('/profiles/{name}', 'Profile@destroy');
-    });
+Route::get('/profiles', 'Profile@index');
+Route::get('/profiles/{name}', 'Profile@show');
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/profiles', 'Profile@store');
+    Route::put('/profiles/{name}', 'Profile@update');
+    Route::delete('/profiles/{name}', 'Profile@destroy');
 });
