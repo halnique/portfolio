@@ -6,6 +6,7 @@ namespace Halnique\Portfolio\Infrastructure\Repositories;
 
 use Halnique\Portfolio\Domain;
 use Halnique\Portfolio\Infrastructure\Eloquent;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 final class Profile implements Domain\Profile\Repository
 {
@@ -21,7 +22,7 @@ final class Profile implements Domain\Profile\Repository
     public function findAll(): Domain\ProfileList
     {
         return $this->fetchFromCache($this->generateCacheKey(__METHOD__), function () {
-            $profiles = $this->eloquent->with('profileTags.Tag')->get()->map(function (Eloquent\Profile $profile) {
+            $profiles = $this->eloquent->withTags()->get()->map(function (Eloquent\Profile $profile) {
                 return $profile->toDomain();
             })->all();
 
@@ -29,10 +30,19 @@ final class Profile implements Domain\Profile\Repository
         });
     }
 
+    /**
+     * @param Domain\Profile\Name $name
+     * @return Domain\Profile
+     * @throws ModelNotFoundException
+     */
     public function findByName(Domain\Profile\Name $name): Domain\Profile
     {
         return $this->fetchFromCache($this->generateCacheKey(__METHOD__, $name->value()), function () use ($name) {
-            return $this->eloquent->with('profileTags.Tag')->nameOf($name->value())->first()->toDomain();
+            $profile = $this->eloquent->withTags()->nameOf($name->value())->first();
+            if ($profile === null) {
+                throw (new ModelNotFoundException())->setModel(get_class($this->eloquent), $name->value());
+            }
+            return $profile->toDomain();
         });
     }
 }
