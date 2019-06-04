@@ -6,6 +6,7 @@ use Halnique\Portfolio\Domain;
 use Halnique\Portfolio\Infrastructure\Eloquent;
 use Halnique\Portfolio\Infrastructure\Repositories\Profile;
 use HalniqueTest\Portfolio\TestCase;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
@@ -45,5 +46,12 @@ class ProfileTest extends TestCase
         $entity = $this->factory()->makeProfile(['id' => Domain\Profile\Id::of($eloquent->id)]);
 
         $this->assertTrue($entity->isSame((new Profile($eloquent))->findByName($name)));
+    }
+
+    public function testFindByName_exception()
+    {
+        $this->expectException(ModelNotFoundException::class);
+        $eloquent = factory(Eloquent\Profile::class)->make();
+        (new Profile($eloquent))->findByName(Domain\Profile\Name::of($this->faker()->word));
     }
 }

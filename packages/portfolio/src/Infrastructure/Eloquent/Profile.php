@@ -18,7 +18,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read string qiita
  * @property-read string hatena
  * @property-read \Illuminate\Database\Eloquent\Collection|ProfileTag[] profileTags
- * @method static Builder nameOf(string $name)
+ * @method static Builder|self withTags()
+ * @method static Builder|self nameOf(string $name)
  * @method self first()
  */
 final class Profile extends Model
@@ -45,6 +46,11 @@ final class Profile extends Model
     public function profileTags(): HasMany
     {
         return $this->hasMany(ProfileTag::class);
+    }
+
+    public function scopeWithTags(Builder $query): Builder
+    {
+        return $query->with('profileTags.Tag');
     }
 
     public function scopeNameOf(Builder $query, string $name): Builder
