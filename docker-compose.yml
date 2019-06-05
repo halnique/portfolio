@@ -36,7 +36,7 @@ services:
     image: mysql:5.7
     volumes:
       - ./docker/mysql/etc/mysql/conf.d/zz-docker.cnf:/etc/mysql/conf.d/zz-docker.cnf
-      - mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql:cached
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
