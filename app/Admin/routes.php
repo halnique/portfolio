@@ -12,5 +12,7 @@ Route::group([
 
     $router->get('/', 'Index@index')->name('admin.home');
     $router->resource('profiles', 'Profile')->names('admin.profiles');
+    $router->resource('tags', 'Tag')->names('admin.tags');
+    $router->resource('profile_tags', 'ProfileTag')->names('admin.profile_tags');
 
 });
