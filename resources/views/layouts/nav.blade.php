@@ -22,8 +22,6 @@
                 {{-- Authentication Links --}}
                 @auth
                     @include('layouts.nav.auth')
-                @else
-                    <a href="/login">SIGN IN</a>|<a href="/register">SIGN UP</a>
                 @endauth
             </ul>
         </div>
