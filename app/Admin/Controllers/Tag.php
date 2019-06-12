@@ -12,11 +12,11 @@ class Tag extends Controller
 
     private $model;
 
-    protected $attributesLabelMap = [
-        'id' => 'ID',
-        'name' => 'Name',
-        'created_at' => 'Created at',
-        'updated_at' => 'Updated at',
+    protected $attributesFieldMap = [
+        'id' => 'display',
+        'name' => 'text',
+        'created_at' => 'display',
+        'updated_at' => 'display',
     ];
 
     public function __construct(Eloquent\Tag $model)

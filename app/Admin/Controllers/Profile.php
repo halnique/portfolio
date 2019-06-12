@@ -12,17 +12,17 @@ class Profile extends Controller
 
     private $model;
 
-    protected $attributesLabelMap = [
-        'id' => 'ID',
-        'name' => 'Name',
-        'introductions' => 'Introductions',
-        'icon_url' => 'Icon Url',
-        'github' => 'GitHub Account',
-        'twitter' => 'Twitter Account',
-        'qiita' => 'Qiita Account',
-        'hatena' => 'Hatena Account',
-        'created_at' => 'Created at',
-        'updated_at' => 'Updated at',
+    protected $attributesFieldMap = [
+        'id' => 'display',
+        'name' => 'text',
+        'introductions' => 'textarea',
+        'icon_url' => 'text',
+        'github' => 'text',
+        'twitter' => 'text',
+        'qiita' => 'text',
+        'hatena' => 'text',
+        'created_at' => 'display',
+        'updated_at' => 'display',
     ];
 
     public function __construct(Eloquent\Profile $model)

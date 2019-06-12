@@ -12,7 +12,7 @@ abstract class Controller extends AdminController
 {
     abstract protected function model(): Model;
 
-    protected $attributesLabelMap = [];
+    protected $attributesFieldMap = [];
 
     /**
      * Make a grid builder.
@@ -23,8 +23,8 @@ abstract class Controller extends AdminController
     {
         $grid = new Grid($this->model());
 
-        foreach ($this->attributesLabelMap as $attribute => $label) {
-            $grid->column($attribute, __($label))->sortable();
+        foreach (array_keys($this->attributesFieldMap) as $attribute) {
+            $grid->column($attribute, __($attribute))->sortable();
         }
 
         return $grid;
@@ -40,8 +40,8 @@ abstract class Controller extends AdminController
     {
         $show = new Show($this->model()->findOrFail($id));
 
-        foreach ($this->attributesLabelMap as $attribute => $label) {
-            $show->field($attribute, __($label));
+        foreach (array_keys($this->attributesFieldMap) as $attribute) {
+            $show->field($attribute, __($attribute));
         }
 
         return $show;
@@ -56,8 +56,8 @@ abstract class Controller extends AdminController
     {
         $form = new Form($this->model());
 
-        foreach ($this->attributesLabelMap as $attribute => $label) {
-            $form->display($attribute, __($label));
+        foreach ($this->attributesFieldMap as $attribute => $field) {
+            $form->$field($attribute, __($attribute));
         }
 
         return $form;

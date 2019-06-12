@@ -12,12 +12,11 @@ class ProfileTag extends Controller
 
     private $model;
 
-    protected $attributesLabelMap = [
-        'id' => 'ID',
-        'profile_id' => 'profiles ID',
-        'tag_id' => 'tags ID',
-        'created_at' => 'Created at',
-        'updated_at' => 'Updated at',
+    protected $attributesFieldMap = [
+        'id' => 'display',
+        'profile_id' => 'id',
+        'tag_id' => 'id',
+        'created_at' => 'display',
     ];
 
     public function __construct(Eloquent\ProfileTag $model)
