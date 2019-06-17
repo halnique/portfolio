@@ -14,6 +14,3 @@
  */
 
 require('./components/Pages/Index');
-
-require('./components/Example');
-require('./components/Profile');
