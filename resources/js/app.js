@@ -13,6 +13,7 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+require('./components/Pages/Index');
+
 require('./components/Example');
-require('./components/Index');
 require('./components/Profile');
