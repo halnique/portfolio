@@ -13,6 +13,4 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
-require('./components/Index');
-require('./components/Profile');
+require('./components/Pages/Index');
