@@ -4,6 +4,7 @@ import NameHeader from './NameHeader';
 import IconImage from './IconImage';
 import Introductions from './Introductions';
 import SocialLink from './SocialLink';
+import Tag from './Tag';
 
 storiesOf('Atoms', module).add('NameHeader', () => (
     <NameHeader name="name"/>
@@ -13,4 +14,6 @@ storiesOf('Atoms', module).add('NameHeader', () => (
     <Introductions introductions="introductions https://example.com"/>
 )).add('SocialLink', () => (
     <SocialLink name="example" url="https://example.com"/>
+)).add('Tag', () => (
+    <Tag name='example'/>
 ));
