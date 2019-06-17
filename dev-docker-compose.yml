@@ -1,0 +1,5 @@
+version: '3'
+services:
+  workspace:
+    ports:
+      - "30000:30000"
