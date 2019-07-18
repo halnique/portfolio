@@ -1,14 +1,20 @@
+build:
+	docker-compose -f docker-compose.yml -f dev-docker-compose.yml build
+
 up:
-	docker-compose up -d
+	docker-compose -f docker-compose.yml -f dev-docker-compose.yml up -d
 
 down:
-	docker-compose down
+	docker-compose -f docker-compose.yml -f dev-docker-compose.yml down
 
 clean:
-	docker-compose down -v
+	docker-compose -f docker-compose.yml -f dev-docker-compose.yml down -v
 
 work:
-	docker-compose exec workspace bash
+	docker-compose -f docker-compose.yml -f dev-docker-compose.yml exec workspace bash
 
-build:
+test:
+	docker-compose -f docker-compose.yml -f dev-docker-compose.yml exec workspace vendor/bin/phpunit
+
+ci:
 	cloud-build-local -dryrun=false .
