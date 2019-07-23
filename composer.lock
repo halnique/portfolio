@@ -3748,16 +3748,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.7.2",
+            "version": "v1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "6306ab390c6194a8cd847bcdc6232669de32b3bb"
+                "reference": "de657b3f4861791057ff3b2930fed7f19fbe845f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/6306ab390c6194a8cd847bcdc6232669de32b3bb",
-                "reference": "6306ab390c6194a8cd847bcdc6232669de32b3bb",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/de657b3f4861791057ff3b2930fed7f19fbe845f",
+                "reference": "de657b3f4861791057ff3b2930fed7f19fbe845f",
                 "shasum": ""
             },
             "require": {
@@ -3815,7 +3815,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2019-06-23T10:12:08+00:00"
+            "time": "2019-07-22T09:52:21+00:00"
         },
         {
             "name": "filp/whoops",
@@ -5125,8 +5125,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -5953,16 +5953,16 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.3.1",
+            "version": "v4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "06ee58fbc9a8130f1d35b5280e15235a0515d457"
+                "reference": "291397232a2eefb3347eaab9170409981eaad0e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/06ee58fbc9a8130f1d35b5280e15235a0515d457",
-                "reference": "06ee58fbc9a8130f1d35b5280e15235a0515d457",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/291397232a2eefb3347eaab9170409981eaad0e2",
+                "reference": "291397232a2eefb3347eaab9170409981eaad0e2",
                 "shasum": ""
             },
             "require": {
@@ -6010,7 +6010,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-31T18:55:30+00:00"
+            "time": "2019-06-13T11:03:18+00:00"
         },
         {
             "name": "symfony/filesystem",
