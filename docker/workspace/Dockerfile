@@ -20,7 +20,7 @@ RUN curl --silent --fail --location --retry 3 --output ./installer.php --url htt
  && php installer.php --no-ansi --install-dir=/usr/bin --filename=composer \
  && rm -f installer.php
 
-RUN apt-get install -y zip unzip
+RUN apt-get install -y zip unzip git
 
 WORKDIR /var/www
 
