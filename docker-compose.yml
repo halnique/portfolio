@@ -8,6 +8,7 @@ services:
     depends_on:
       - mysql
       - redis
+    restart: always
   nginx:
     image: nginx:alpine
     volumes:
@@ -23,6 +24,7 @@ services:
     depends_on:
       - workspace
       - php-fpm
+    restart: always
   php-fpm:
     build: ./docker/php-fpm
     volumes:
@@ -32,6 +34,7 @@ services:
     tty: true
     depends_on:
       - workspace
+    restart: always
   mysql:
     image: mysql:5.7
     volumes:
@@ -42,8 +45,10 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    restart: always
   redis:
     image: redis
+    restart: always
 
 volumes:
   mysql:
