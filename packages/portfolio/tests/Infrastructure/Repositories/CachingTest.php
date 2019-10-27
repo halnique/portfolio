@@ -2,6 +2,7 @@
 
 namespace HalniqueTest\Portfolio\Infrastructure\Repositories;
 
+
 use Halnique\Portfolio\Infrastructure\Repositories\Caching;
 use HalniqueTest\Portfolio\TestCase;
 
@@ -23,24 +24,25 @@ class CachingTest extends TestCase
 
     public function testFetchFromCache()
     {
-        $key = $this->faker()->word;
+        $keyA = $this->faker()->word . 'A';
 
-        $expected = $this->faker()->text;
+        $expectedA = $this->faker()->text . 'A';
 
-        $this->assertEquals($expected, $this->fetchFromCache($key, function () use ($expected) {
-            return $expected;
+        $this->assertEquals($expectedA, $this->fetchFromCache($keyA, function () use ($expectedA) {
+            return $expectedA;
         }));
 
-        $expected = $this->faker()->text;
+        $expectedB = $this->faker()->text . 'B';
 
-        $this->assertNotEquals($expected, $this->fetchFromCache($key, function () use ($expected) {
-            return $expected;
+        $this->assertNotEquals($expectedB, $this->fetchFromCache($keyA, function () use ($expectedB) {
+            // not call
+            return $expectedB;
         }));
 
-        $key = $this->faker()->word;
+        $keyB = $this->faker()->word . 'B';
 
-        $this->assertEquals($expected, $this->fetchFromCache($key, function () use ($expected) {
-            return $expected;
+        $this->assertEquals($expectedB, $this->fetchFromCache($keyB, function () use ($expectedB) {
+            return $expectedB;
         }));
     }
 }

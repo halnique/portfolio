@@ -30,7 +30,7 @@ class AccountTest extends TestCase
     {
         $account = $this->faker()->word;
         $this->assertTrue(Account::of($account)->equals(Account::of($account)));
-        $newAccount = $this->faker()->word;
+        $newAccount = $this->faker()->word . '1';
         $this->assertFalse(Account::of($account)->equals(Account::of($newAccount)));
     }
 
