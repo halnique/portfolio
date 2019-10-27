@@ -73,6 +73,10 @@
             "@php artisan config:cache",
             "@php artisan route:cache",
             "@php artisan view:cache"
+        ],
+        "test": [
+            "@php artisan config:clear",
+            "./vendor/bin/phpunit"
         ]
     }
 }
