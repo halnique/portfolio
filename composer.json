@@ -74,6 +74,15 @@
             "@php artisan route:cache",
             "@php artisan view:cache"
         ],
+        "clear": [
+            "@php artisan config:clear",
+            "@php artisan route:clear",
+            "@php artisan view:clear"
+        ],
+        "setup": [
+            "@php artisan migrate",
+            "@php artisan db:seed"
+        ],
         "test": [
             "@php artisan config:clear",
             "./vendor/bin/phpunit"

@@ -47,7 +47,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     restart: always
   redis:
-    image: redis
+    image: redis:alpine
     restart: always
 
 volumes:
