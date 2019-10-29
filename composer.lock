@@ -3720,12 +3720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "79c7aaff92fc8eb709cf130805ce10bc57ababff"
+                "reference": "fd747d83a5341f9f221e32ec5d523ad59f733ffc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/79c7aaff92fc8eb709cf130805ce10bc57ababff",
-                "reference": "79c7aaff92fc8eb709cf130805ce10bc57ababff",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/fd747d83a5341f9f221e32ec5d523ad59f733ffc",
+                "reference": "fd747d83a5341f9f221e32ec5d523ad59f733ffc",
                 "shasum": ""
             },
             "require": {
@@ -3783,7 +3783,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2019-10-24T02:52:57+00:00"
+            "time": "2019-10-28T03:24:15+00:00"
         },
         {
             "name": "filp/whoops",
@@ -5026,16 +5026,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.4.1",
+            "version": "8.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "366a4a0f2b971fd43b7c351d621e8dd7d7131869"
+                "reference": "a142a7e66c0ea7b5b6c04ee27f08d10d1137cd9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/366a4a0f2b971fd43b7c351d621e8dd7d7131869",
-                "reference": "366a4a0f2b971fd43b7c351d621e8dd7d7131869",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a142a7e66c0ea7b5b6c04ee27f08d10d1137cd9b",
+                "reference": "a142a7e66c0ea7b5b6c04ee27f08d10d1137cd9b",
                 "shasum": ""
             },
             "require": {
@@ -5105,7 +5105,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-10-07T12:57:41+00:00"
+            "time": "2019-10-28T10:39:51+00:00"
         },
         {
             "name": "psr/http-message",
