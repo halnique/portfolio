@@ -26,7 +26,7 @@ class StringObjectTest extends TestCase
     {
         $string = $this->faker()->word;
         $this->assertTrue(StringObject::of($string)->equals(StringObject::of($string)));
-        $newString = $this->faker()->word;
+        $newString = $this->faker()->word . '1';
         $this->assertFalse(StringObject::of($string)->equals(StringObject::of($newString)));
     }
 
