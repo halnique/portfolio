@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/halnique/portfolio']
+  id: git clone
+- name: 'gcr.io/${PROJECT_ID}/composer'
+  args: ['install', '--no-interaction', '--no-suggest']
+  id: composer install
+- name: 'gcr.io/${PROJECT_ID}/composer'
+  args: ['test']
+  id: composer test
+timeout: 500s

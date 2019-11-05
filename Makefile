@@ -9,3 +9,6 @@ clean:
 
 work:
 	docker-compose exec workspace bash
+
+build:
+	cloud-build-local -dryrun=false .
