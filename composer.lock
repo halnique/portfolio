@@ -470,16 +470,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.6.2",
+            "version": "v6.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "27efba7e13aaf91a87ae9a63db158e943eb71410"
+                "reference": "ba4204f3a8b9672b6116398c165bd9c0c6eac077"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/27efba7e13aaf91a87ae9a63db158e943eb71410",
-                "reference": "27efba7e13aaf91a87ae9a63db158e943eb71410",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ba4204f3a8b9672b6116398c165bd9c0c6eac077",
+                "reference": "ba4204f3a8b9672b6116398c165bd9c0c6eac077",
                 "shasum": ""
             },
             "require": {
@@ -612,7 +612,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-12-05T13:49:53+00:00"
+            "time": "2019-12-10T16:01:57+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3803,12 +3803,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "d2f60c63741d7ef0153b11f6c7486cc5d33d1ecc"
+                "reference": "6d13b4c014c91101cde901451cb9b54bd2bd44ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/d2f60c63741d7ef0153b11f6c7486cc5d33d1ecc",
-                "reference": "d2f60c63741d7ef0153b11f6c7486cc5d33d1ecc",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/6d13b4c014c91101cde901451cb9b54bd2bd44ce",
+                "reference": "6d13b4c014c91101cde901451cb9b54bd2bd44ce",
                 "shasum": ""
             },
             "require": {
@@ -3866,7 +3866,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2019-12-04T07:13:48+00:00"
+            "time": "2019-12-11T02:44:04+00:00"
         },
         {
             "name": "filp/whoops",
