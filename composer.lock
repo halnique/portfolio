@@ -3803,12 +3803,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "6d13b4c014c91101cde901451cb9b54bd2bd44ce"
+                "reference": "4ba62abaaf3554a401ce52bcfa12c169804ed350"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/6d13b4c014c91101cde901451cb9b54bd2bd44ce",
-                "reference": "6d13b4c014c91101cde901451cb9b54bd2bd44ce",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/4ba62abaaf3554a401ce52bcfa12c169804ed350",
+                "reference": "4ba62abaaf3554a401ce52bcfa12c169804ed350",
                 "shasum": ""
             },
             "require": {
@@ -3866,7 +3866,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2019-12-11T02:44:04+00:00"
+            "time": "2019-12-12T10:06:06+00:00"
         },
         {
             "name": "filp/whoops",
@@ -3931,16 +3931,16 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "v1.9.0",
+            "version": "v1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "27a216cbe72327b2d6369fab721a5843be71e57d"
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/27a216cbe72327b2d6369fab721a5843be71e57d",
-                "reference": "27a216cbe72327b2d6369fab721a5843be71e57d",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
                 "shasum": ""
             },
             "require": {
@@ -3953,7 +3953,9 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": []
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -3975,7 +3977,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2019-11-14T13:13:06+00:00"
+            "time": "2019-12-12T13:22:17+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
