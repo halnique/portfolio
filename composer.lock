@@ -3804,12 +3804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "4ba62abaaf3554a401ce52bcfa12c169804ed350"
+                "reference": "addbc6da8f8782d4061f538ddc70187e85954c69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/4ba62abaaf3554a401ce52bcfa12c169804ed350",
-                "reference": "4ba62abaaf3554a401ce52bcfa12c169804ed350",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/addbc6da8f8782d4061f538ddc70187e85954c69",
+                "reference": "addbc6da8f8782d4061f538ddc70187e85954c69",
                 "shasum": ""
             },
             "require": {
@@ -3867,20 +3867,20 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2019-12-12T10:06:06+00:00"
+            "time": "2019-12-23T04:31:34+00:00"
         },
         {
             "name": "filp/whoops",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "cde50e6720a39fdacb240159d3eea6865d51fd96"
+                "reference": "ee9699e79d8fcdd15c107e035d7b965e4fa854ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/cde50e6720a39fdacb240159d3eea6865d51fd96",
-                "reference": "cde50e6720a39fdacb240159d3eea6865d51fd96",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/ee9699e79d8fcdd15c107e035d7b965e4fa854ac",
+                "reference": "ee9699e79d8fcdd15c107e035d7b965e4fa854ac",
                 "shasum": ""
             },
             "require": {
@@ -3928,7 +3928,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2019-08-07T09:00:00+00:00"
+            "time": "2019-12-21T10:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
