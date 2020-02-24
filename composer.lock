@@ -282,24 +282,24 @@
         },
         {
             "name": "fideloper/proxy",
-            "version": "4.2.2",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fideloper/TrustedProxy.git",
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81"
+                "reference": "ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/790194d5d3da89a713478875d2e2d05855a90a81",
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a",
+                "reference": "ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "^5.0|^6.0|^7.0",
+                "illuminate/contracts": "^5.0|^6.0|^7.0|^8.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/http": "^5.0|^6.0|^7.0",
+                "illuminate/http": "^5.0|^6.0|^7.0|^8.0",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.0"
             },
@@ -332,7 +332,7 @@
                 "proxy",
                 "trusted proxy"
             ],
-            "time": "2019-12-20T13:11:11+00:00"
+            "time": "2020-02-22T01:51:47+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3842,12 +3842,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "111221d4e4ccc77dc51d5ee3059a74f4d27e040d"
+                "reference": "25492e310751a149383f7a1a6f116b16fdb3751a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/111221d4e4ccc77dc51d5ee3059a74f4d27e040d",
-                "reference": "111221d4e4ccc77dc51d5ee3059a74f4d27e040d",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/25492e310751a149383f7a1a6f116b16fdb3751a",
+                "reference": "25492e310751a149383f7a1a6f116b16fdb3751a",
                 "shasum": ""
             },
             "require": {
@@ -3905,7 +3905,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-02-13T15:20:12+00:00"
+            "time": "2020-02-24T01:32:45+00:00"
         },
         {
             "name": "filp/whoops",
