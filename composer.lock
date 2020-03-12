@@ -424,16 +424,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.0",
+            "version": "v6.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "077b895d935b7fbcfb1d1eb34217fa4f80a130d8"
+                "reference": "367c2c8dfdfe83cb2ddbc029c0222174098d093a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/077b895d935b7fbcfb1d1eb34217fa4f80a130d8",
-                "reference": "077b895d935b7fbcfb1d1eb34217fa4f80a130d8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/367c2c8dfdfe83cb2ddbc029c0222174098d093a",
+                "reference": "367c2c8dfdfe83cb2ddbc029c0222174098d093a",
                 "shasum": ""
             },
             "require": {
@@ -566,7 +566,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-03-03T13:14:27+00:00"
+            "time": "2020-03-10T14:11:04+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -708,16 +708,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.64",
+            "version": "1.0.65",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "d13c43dbd4b791f815215959105a008515d1a2e0"
+                "reference": "8f17b3ba67097aafb8318cd5c553b1acf7c891c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d13c43dbd4b791f815215959105a008515d1a2e0",
-                "reference": "d13c43dbd4b791f815215959105a008515d1a2e0",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8f17b3ba67097aafb8318cd5c553b1acf7c891c8",
+                "reference": "8f17b3ba67097aafb8318cd5c553b1acf7c891c8",
                 "shasum": ""
             },
             "require": {
@@ -788,7 +788,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2020-02-05T18:14:17+00:00"
+            "time": "2020-03-08T18:53:20+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3841,27 +3841,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "9e790e31ccce938bbde96ae9ca27dca30661e6eb"
+                "reference": "67f65f791fe468c32ec0f97a94b69f3f9078757c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/9e790e31ccce938bbde96ae9ca27dca30661e6eb",
-                "reference": "9e790e31ccce938bbde96ae9ca27dca30661e6eb",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/67f65f791fe468c32ec0f97a94b69f3f9078757c",
+                "reference": "67f65f791fe468c32ec0f97a94b69f3f9078757c",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "2.*",
-                "laravel/framework": "~5.5|~6.0",
+                "laravel/framework": ">=5.5",
                 "php": ">=7.0.0",
                 "symfony/dom-crawler": "~3.1|~4.0|~5.0"
             },
             "require-dev": {
                 "fzaninotto/faker": "~1.4",
                 "intervention/image": "~2.3",
-                "laravel/browser-kit-testing": "^2.0",
-                "laravel/laravel": "~5.5|~6.0",
-                "phpunit/phpunit": "~6.0|~8.0",
-                "symfony/css-selector": "~3.1"
+                "laravel/browser-kit-testing": "^6.0",
+                "laravel/laravel": ">=5.5"
             },
             "suggest": {
                 "intervention/image": "Required to handling and manipulation upload images (~2.3).",
@@ -3904,7 +3902,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-03-03T06:33:56+00:00"
+            "time": "2020-03-09T03:06:06+00:00"
         },
         {
             "name": "filp/whoops",
