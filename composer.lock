@@ -426,16 +426,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.5",
+            "version": "v6.18.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5b7f541a3c075b394793f4d7884a24ad6f00288a"
+                "reference": "4ef5f9612c2694c915f53f0cec3e4081e9bfc778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5b7f541a3c075b394793f4d7884a24ad6f00288a",
-                "reference": "5b7f541a3c075b394793f4d7884a24ad6f00288a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4ef5f9612c2694c915f53f0cec3e4081e9bfc778",
+                "reference": "4ef5f9612c2694c915f53f0cec3e4081e9bfc778",
                 "shasum": ""
             },
             "require": {
@@ -568,7 +568,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-04-07T18:54:55+00:00"
+            "time": "2020-04-08T15:51:23+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3849,12 +3849,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "16d4f5db3cfa96922bba7e37b44210be42dd0a7d"
+                "reference": "38f1864de5ccb3f34397651415372facf42b2ab9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/16d4f5db3cfa96922bba7e37b44210be42dd0a7d",
-                "reference": "16d4f5db3cfa96922bba7e37b44210be42dd0a7d",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/38f1864de5ccb3f34397651415372facf42b2ab9",
+                "reference": "38f1864de5ccb3f34397651415372facf42b2ab9",
                 "shasum": ""
             },
             "require": {
@@ -3910,7 +3910,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-03-28T03:23:19+00:00"
+            "time": "2020-04-08T16:23:00+00:00"
         },
         {
             "name": "filp/whoops",
