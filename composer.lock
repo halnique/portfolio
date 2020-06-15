@@ -3841,12 +3841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "0278ede8053d65329ce8503a94ac8a6ff5f5df19"
+                "reference": "8f0aefefec5781699f24c78e64d085fd7900c249"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/0278ede8053d65329ce8503a94ac8a6ff5f5df19",
-                "reference": "0278ede8053d65329ce8503a94ac8a6ff5f5df19",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/8f0aefefec5781699f24c78e64d085fd7900c249",
+                "reference": "8f0aefefec5781699f24c78e64d085fd7900c249",
                 "shasum": ""
             },
             "require": {
@@ -3902,20 +3902,20 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-06-08T12:20:43+00:00"
+            "time": "2020-06-14T16:53:48+00:00"
         },
         {
             "name": "filp/whoops",
-            "version": "2.7.2",
+            "version": "2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "17d0d3f266c8f925ebd035cd36f83cf802b47d4a"
+                "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/17d0d3f266c8f925ebd035cd36f83cf802b47d4a",
-                "reference": "17d0d3f266c8f925ebd035cd36f83cf802b47d4a",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
+                "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
                 "shasum": ""
             },
             "require": {
@@ -3963,7 +3963,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2020-05-05T12:28:07+00:00"
+            "time": "2020-06-14T09:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
