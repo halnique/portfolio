@@ -374,16 +374,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.32",
+            "version": "v6.18.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5f933aac51819af3a1cbb4d0233ee307b7c8e757"
+                "reference": "7a74817c91be61676deafe3a84a758a71350d9f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5f933aac51819af3a1cbb4d0233ee307b7c8e757",
-                "reference": "5f933aac51819af3a1cbb4d0233ee307b7c8e757",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7a74817c91be61676deafe3a84a758a71350d9f2",
+                "reference": "7a74817c91be61676deafe3a84a758a71350d9f2",
                 "shasum": ""
             },
             "require": {
@@ -518,7 +518,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-08-04T14:35:59+00:00"
+            "time": "2020-08-06T14:55:00+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -4528,12 +4528,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "9df4bb98363a22119b0c202b7e085dc15dd7337e"
+                "reference": "fc3e359a8e251cb527b0d544495b394106610123"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/9df4bb98363a22119b0c202b7e085dc15dd7337e",
-                "reference": "9df4bb98363a22119b0c202b7e085dc15dd7337e",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/fc3e359a8e251cb527b0d544495b394106610123",
+                "reference": "fc3e359a8e251cb527b0d544495b394106610123",
                 "shasum": ""
             },
             "require": {
@@ -4546,7 +4546,8 @@
                 "fzaninotto/faker": "~1.4",
                 "intervention/image": "~2.3",
                 "laravel/browser-kit-testing": "^6.0",
-                "laravel/laravel": ">=5.5"
+                "laravel/laravel": ">=5.5",
+                "spatie/phpunit-watcher": "^1.22.0"
             },
             "suggest": {
                 "intervention/image": "Required to handling and manipulation upload images (~2.3).",
@@ -4589,7 +4590,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-07-10T09:14:20+00:00"
+            "time": "2020-08-07T03:34:25+00:00"
         },
         {
             "name": "filp/whoops",
