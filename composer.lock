@@ -1227,16 +1227,16 @@
         },
         {
             "name": "predis/predis",
-            "version": "v1.1.3",
+            "version": "v1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/predis/predis.git",
-                "reference": "2ce537d75e610550f5337e41b2a971417999b028"
+                "reference": "8be2418f0116572f1937083daf5cceb1bddc9f0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/predis/predis/zipball/2ce537d75e610550f5337e41b2a971417999b028",
-                "reference": "2ce537d75e610550f5337e41b2a971417999b028",
+                "url": "https://api.github.com/repos/predis/predis/zipball/8be2418f0116572f1937083daf5cceb1bddc9f0d",
+                "reference": "8be2418f0116572f1937083daf5cceb1bddc9f0d",
                 "shasum": ""
             },
             "require": {
@@ -1298,7 +1298,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-18T21:00:59+00:00"
+            "time": "2020-08-29T22:15:08+00:00"
         },
         {
             "name": "psr/container",
@@ -4664,12 +4664,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "25c12164823d166a88007085717c3f27b1f02d5e"
+                "reference": "b09f6b7ce559ac27e6ec595e9e327b2738e81cd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/25c12164823d166a88007085717c3f27b1f02d5e",
-                "reference": "25c12164823d166a88007085717c3f27b1f02d5e",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/b09f6b7ce559ac27e6ec595e9e327b2738e81cd3",
+                "reference": "b09f6b7ce559ac27e6ec595e9e327b2738e81cd3",
                 "shasum": ""
             },
             "require": {
@@ -4726,7 +4726,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-09-03T04:31:26+00:00"
+            "time": "2020-09-03T06:28:11+00:00"
         },
         {
             "name": "filp/whoops",
