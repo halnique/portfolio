@@ -16,7 +16,7 @@
         "@babel/preset-react": "^7.10.4",
         "@storybook/react": "^6.0.26",
         "babel-loader": "^8.1.0",
-        "bootstrap": "^4.5.2",
+        "bootstrap": "^4.5.3",
         "cross-env": "^7.0",
         "jquery": "^3.5",
         "laravel-mix": "^5.0.7",
