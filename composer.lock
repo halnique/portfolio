@@ -4767,12 +4767,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "2c85be46214a77e96d9b502be0fca40e19dad6cb"
+                "reference": "c9597c895b75f23ea7954ca0070891847431dfda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/2c85be46214a77e96d9b502be0fca40e19dad6cb",
-                "reference": "2c85be46214a77e96d9b502be0fca40e19dad6cb",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/c9597c895b75f23ea7954ca0070891847431dfda",
+                "reference": "c9597c895b75f23ea7954ca0070891847431dfda",
                 "shasum": ""
             },
             "require": {
@@ -4829,20 +4829,20 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-10-18T14:43:43+00:00"
+            "time": "2020-11-02T04:28:11+00:00"
         },
         {
             "name": "filp/whoops",
-            "version": "2.9.0",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "2ec31f3adc54c71a59c5e3c2143d7a0e2f8899f8"
+                "reference": "307fb34a5ab697461ec4c9db865b20ff2fd40771"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/2ec31f3adc54c71a59c5e3c2143d7a0e2f8899f8",
-                "reference": "2ec31f3adc54c71a59c5e3c2143d7a0e2f8899f8",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/307fb34a5ab697461ec4c9db865b20ff2fd40771",
+                "reference": "307fb34a5ab697461ec4c9db865b20ff2fd40771",
                 "shasum": ""
             },
             "require": {
@@ -4890,7 +4890,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2020-10-20T12:00:00+00:00"
+            "time": "2020-11-01T12:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -4940,6 +4940,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
