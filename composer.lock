@@ -1627,16 +1627,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.16",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "20f73dd143a5815d475e0838ff867bce1eebd9d5"
+                "reference": "12e071278e396cc3e1c149857337e9e192deca0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/20f73dd143a5815d475e0838ff867bce1eebd9d5",
-                "reference": "20f73dd143a5815d475e0838ff867bce1eebd9d5",
+                "url": "https://api.github.com/repos/symfony/console/zipball/12e071278e396cc3e1c149857337e9e192deca0b",
+                "reference": "12e071278e396cc3e1c149857337e9e192deca0b",
                 "shasum": ""
             },
             "require": {
@@ -1709,7 +1709,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T11:50:19+00:00"
+            "time": "2020-12-18T07:41:31+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -4570,12 +4570,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "6ddd381a9f4928b6c2175dea297e6a8b385d8d28"
+                "reference": "ab909f367b04b902555ec1a75665e86705fbc721"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/6ddd381a9f4928b6c2175dea297e6a8b385d8d28",
-                "reference": "6ddd381a9f4928b6c2175dea297e6a8b385d8d28",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/ab909f367b04b902555ec1a75665e86705fbc721",
+                "reference": "ab909f367b04b902555ec1a75665e86705fbc721",
                 "shasum": ""
             },
             "require": {
@@ -4632,7 +4632,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-11-15T02:55:51+00:00"
+            "time": "2020-12-17T05:55:02+00:00"
         },
         {
             "name": "filp/whoops",
@@ -5438,16 +5438,16 @@
         },
         {
             "name": "php-coveralls/php-coveralls",
-            "version": "v2.4.2",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-coveralls/php-coveralls.git",
-                "reference": "8a33ae229da63a0bd22dadae1512af663ce5e559"
+                "reference": "909381bd40a17ae6e9076051f0d73293c1c091af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/8a33ae229da63a0bd22dadae1512af663ce5e559",
-                "reference": "8a33ae229da63a0bd22dadae1512af663ce5e559",
+                "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/909381bd40a17ae6e9076051f0d73293c1c091af",
+                "reference": "909381bd40a17ae6e9076051f0d73293c1c091af",
                 "shasum": ""
             },
             "require": {
@@ -5513,7 +5513,7 @@
                 "github",
                 "test"
             ],
-            "time": "2020-10-23T16:34:35+00:00"
+            "time": "2020-12-24T09:17:03+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -7016,16 +7016,16 @@
         },
         {
             "name": "symfony/config",
-            "version": "v4.4.16",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "e85481cf359a7b28a44ac91f7d83441b70d76192"
+                "reference": "e501c56d2fa70798075b9811d0eb4c27de491459"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/e85481cf359a7b28a44ac91f7d83441b70d76192",
-                "reference": "e85481cf359a7b28a44ac91f7d83441b70d76192",
+                "url": "https://api.github.com/repos/symfony/config/zipball/e501c56d2fa70798075b9811d0eb4c27de491459",
+                "reference": "e501c56d2fa70798075b9811d0eb4c27de491459",
                 "shasum": ""
             },
             "require": {
@@ -7085,7 +7085,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T11:50:19+00:00"
+            "time": "2020-12-09T08:58:17+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -7159,16 +7159,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.4.16",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "e74b873395b7213d44d1397bd4a605cd1632a68a"
+                "reference": "d99fbef7e0f69bf162ae6131b31132fa3cc4bcbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/e74b873395b7213d44d1397bd4a605cd1632a68a",
-                "reference": "e74b873395b7213d44d1397bd4a605cd1632a68a",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d99fbef7e0f69bf162ae6131b31132fa3cc4bcbe",
+                "reference": "d99fbef7e0f69bf162ae6131b31132fa3cc4bcbe",
                 "shasum": ""
             },
             "require": {
@@ -7214,20 +7214,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T11:50:19+00:00"
+            "time": "2020-11-30T13:04:35+00:00"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v4.4.16",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
-                "reference": "7c1d1461330e86e901dbb587a10397d15a02cbad"
+                "reference": "c7a594108ed01c89555c4e1bb123b4a54aee2595"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/7c1d1461330e86e901dbb587a10397d15a02cbad",
-                "reference": "7c1d1461330e86e901dbb587a10397d15a02cbad",
+                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/c7a594108ed01c89555c4e1bb123b4a54aee2595",
+                "reference": "c7a594108ed01c89555c4e1bb123b4a54aee2595",
                 "shasum": ""
             },
             "require": {
@@ -7273,20 +7273,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T11:50:19+00:00"
+            "time": "2020-10-31T22:44:29+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.16",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "543cb4dbd45ed803f08a9a65f27fb149b5dd20c2"
+                "reference": "bbce94f14d73732340740366fcbe63363663a403"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/543cb4dbd45ed803f08a9a65f27fb149b5dd20c2",
-                "reference": "543cb4dbd45ed803f08a9a65f27fb149b5dd20c2",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/bbce94f14d73732340740366fcbe63363663a403",
+                "reference": "bbce94f14d73732340740366fcbe63363663a403",
                 "shasum": ""
             },
             "require": {
@@ -7341,7 +7341,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T11:50:19+00:00"
+            "time": "2020-12-08T16:59:59+00:00"
         },
         {
             "name": "theseer/tokenizer",
