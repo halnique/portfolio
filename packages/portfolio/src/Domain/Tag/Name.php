@@ -3,6 +3,7 @@
 namespace Halnique\Portfolio\Domain\Tag;
 
 
+use DomainException;
 use Halnique\Portfolio\Domain\StringObject;
 
 final class Name extends StringObject
@@ -12,7 +13,7 @@ final class Name extends StringObject
     protected static function validate(string $string): void
     {
         if (strlen($string) > self::MAX_LENGTH) {
-            throw new \DomainException('Make NAME less than ' . self::MAX_LENGTH . ' characters.');
+            throw new DomainException('Make NAME less than ' . self::MAX_LENGTH . ' characters.');
         }
     }
 }

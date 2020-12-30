@@ -3,14 +3,16 @@
 namespace Halnique\Portfolio\Domain;
 
 
+use DomainException;
+
 abstract class Id implements ValueObject
 {
-    private $id;
+    private int $id;
 
     private function __construct(int $id)
     {
         if ($id < 0) {
-            throw new \DomainException('Make ID a positive number.');
+            throw new DomainException('Make ID a positive number.');
         }
         $this->id = $id;
     }

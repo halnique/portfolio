@@ -3,12 +3,15 @@
 namespace HalniqueTest\Portfolio\Domain;
 
 
+use Faker\Generator;
 use Halnique\Portfolio\Domain;
+use ReflectionClass;
+use Throwable;
 
 class Factory
 {
-    private $faker;
-    
+    private Generator $faker;
+
     private function __construct()
     {
         $this->faker = \Faker\Factory::create();
@@ -40,7 +43,9 @@ class Factory
     {
         $profiles = [];
         for ($id = 0; $id < $this->faker->randomDigit; $id++) {
-            $profiles[] = $this->makeProfile(['id' => $id + 1]);
+            $profiles[] = $this->makeProfile([
+                'id' => Domain\Profile\Id::of($id + 1),
+            ]);
         }
 
         $profileList = Domain\ProfileList::of($profiles);
@@ -62,7 +67,9 @@ class Factory
     {
         $tags = [];
         for ($id = 0; $id < $this->faker->randomDigit; $id++) {
-            $tags[] = $this->makeTag(['id' => $id + 1]);
+            $tags[] = $this->makeTag([
+                'id' => Domain\Tag\Id::of($id + 1),
+            ]);
         }
 
         $tagList = Domain\TagList::of($tags);
@@ -85,7 +92,9 @@ class Factory
     {
         $profileTags = [];
         for ($id = 0; $id < $this->faker->randomDigit; $id++) {
-            $profileTags[] = $this->makeProfileTag(['id' => $id + 1]);
+            $profileTags[] = $this->makeProfileTag([
+                'id' => Domain\ProfileTag\Id::of($id + 1),
+            ]);
         }
 
         $profileTagList = Domain\ProfileTagList::of($profileTags);
@@ -96,7 +105,7 @@ class Factory
     private function applyAttributes($object, array $attributes)
     {
         try {
-            $reflection = new \ReflectionClass($object);
+            $reflection = new ReflectionClass($object);
             foreach ($attributes as $property => $value) {
                 if ($reflection->hasProperty($property)) {
                     $reflectionProperty = $reflection->getProperty($property);
@@ -105,9 +114,8 @@ class Factory
                     $reflectionProperty->setAccessible(false);
                 }
             }
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             dd($e);
-            return $object;
         }
 
         return $object;

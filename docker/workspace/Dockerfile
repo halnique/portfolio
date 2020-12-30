@@ -1,4 +1,6 @@
-FROM php:7.2
+ARG PHP_VERSION=latest
+
+FROM php:${PHP_VERSION}
 
 LABEL maintainer="halnique <shunsuke4dev@gmail.com>"
 

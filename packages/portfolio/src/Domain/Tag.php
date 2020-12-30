@@ -7,9 +7,9 @@ use Halnique\Portfolio\Domain\Tag\Name;
 
 final class Tag implements Entity
 {
-    private $id;
+    private Tag\Id $id;
 
-    private $name;
+    private Name $name;
 
     public function __construct(Tag\Id $id, Name $name)
     {

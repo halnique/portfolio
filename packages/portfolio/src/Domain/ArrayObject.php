@@ -5,7 +5,7 @@ namespace Halnique\Portfolio\Domain;
 
 abstract class ArrayObject implements ValueObject
 {
-    private $items;
+    private array $items;
 
     private function __construct(array $items)
     {

@@ -3,6 +3,8 @@
 namespace Halnique\Portfolio\Application\Controllers;
 
 
-abstract class Controller extends \App\Http\Controllers\Controller
+use App\Http\Controllers\Controller as BaseController;
+
+abstract class Controller extends BaseController
 {
 }

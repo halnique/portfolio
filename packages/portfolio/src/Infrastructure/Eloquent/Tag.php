@@ -6,12 +6,13 @@ namespace Halnique\Portfolio\Infrastructure\Eloquent;
 use Halnique\Portfolio\Domain;
 use Halnique\Portfolio\Infrastructure;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property-read int id
  * @property-read string name
- * @property-read \Illuminate\Database\Eloquent\Collection|ProfileTag[] profileTags
+ * @property-read Collection|ProfileTag[] profileTags
  * @method static Builder nameOf(string $name)
  * @method self first()
  */

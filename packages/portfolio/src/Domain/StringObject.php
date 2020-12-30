@@ -5,7 +5,7 @@ namespace Halnique\Portfolio\Domain;
 
 abstract class StringObject implements ValueObject
 {
-    private $string;
+    private string $string;
 
     private function __construct(string $string)
     {

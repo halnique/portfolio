@@ -5,7 +5,7 @@ namespace Halnique\Portfolio\Domain;
 
 abstract class Account implements ValueObject
 {
-    private $account;
+    private string $account;
 
     private function __construct(string $account)
     {

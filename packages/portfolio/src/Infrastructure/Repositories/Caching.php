@@ -4,6 +4,9 @@
 namespace Halnique\Portfolio\Infrastructure\Repositories;
 
 
+use Closure;
+use Exception;
+
 trait Caching
 {
     /**
@@ -18,10 +21,11 @@ trait Caching
 
     /**
      * @param string $key
-     * @param \Closure $notFoundCallback
+     * @param Closure $notFoundCallback
      * @return mixed
+     * @throws Exception
      */
-    public function fetchFromCache(string $key, \Closure $notFoundCallback)
+    public function fetchFromCache(string $key, Closure $notFoundCallback)
     {
         $data = cache($key);
 

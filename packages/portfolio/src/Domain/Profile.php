@@ -13,23 +13,23 @@ use Halnique\Portfolio\Domain\Profile\Twitter;
 
 final class Profile implements Entity
 {
-    private $id;
+    private Profile\Id $id;
 
-    private $name;
+    private Name $name;
 
-    private $introductions;
+    private Introductions $introductions;
 
-    private $iconUrl;
+    private IconUrl $iconUrl;
 
-    private $github;
+    private Github $github;
 
-    private $twitter;
+    private Twitter $twitter;
 
-    private $qiita;
+    private Qiita $qiita;
 
-    private $hatena;
+    private Hatena $hatena;
 
-    private $tags;
+    private TagList $tags;
 
     public function __construct(
         Profile\Id $id,

@@ -1,7 +1,10 @@
 version: '3.7'
 services:
   workspace:
-    build: ./docker/workspace
+    build:
+      context: ./docker/workspace
+      args:
+        - PHP_VERSION=${PHP_VERSION}
     volumes:
       - .:/var/www:cached
     tty: true
@@ -26,7 +29,10 @@ services:
       - php-fpm
     restart: always
   php-fpm:
-    build: ./docker/php-fpm
+    build:
+      context: ./docker/php-fpm
+      args:
+        - PHP_VERSION=${PHP_VERSION}
     volumes:
       - .:/var/www:cached
       - ./docker/php-fpm/usr/local/etc/php-fpm.d/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf

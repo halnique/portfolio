@@ -5,11 +5,11 @@ namespace Halnique\Portfolio\Domain;
 
 final class ProfileTag implements Entity
 {
-    private $id;
+    private ProfileTag\Id $id;
 
-    private $profileId;
+    private Profile\Id $profileId;
 
-    private $tagId;
+    private Tag\Id $tagId;
 
     public function __construct(
         ProfileTag\Id $id,
