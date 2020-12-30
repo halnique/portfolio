@@ -7,7 +7,7 @@ use Halnique\Portfolio\Domain;
 
 class FindAll
 {
-    private $repository;
+    private Domain\Profile\Repository $repository;
 
     public function __construct(Domain\Profile\Repository $repository)
     {

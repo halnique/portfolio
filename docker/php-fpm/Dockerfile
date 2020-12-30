@@ -1,4 +1,6 @@
-FROM php:7.2-fpm-alpine
+ARG PHP_VERSION=latest
+
+FROM php:${PHP_VERSION}-fpm-alpine
 
 LABEL maintainer="halnique <shunsuke4dev@gmail.com>"
 

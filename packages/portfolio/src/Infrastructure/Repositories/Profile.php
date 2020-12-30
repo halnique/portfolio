@@ -4,6 +4,7 @@
 namespace Halnique\Portfolio\Infrastructure\Repositories;
 
 
+use Exception;
 use Halnique\Portfolio\Domain;
 use Halnique\Portfolio\Infrastructure\Eloquent;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -12,13 +13,17 @@ final class Profile implements Domain\Profile\Repository
 {
     use Caching;
 
-    private $eloquent;
+    private Eloquent\Profile $eloquent;
 
     public function __construct(Eloquent\Profile $eloquent)
     {
         $this->eloquent = $eloquent;
     }
 
+    /**
+     * @return Domain\ProfileList
+     * @throws Exception
+     */
     public function findAll(): Domain\ProfileList
     {
         return $this->fetchFromCache($this->generateCacheKey(__METHOD__), function () {
@@ -33,7 +38,7 @@ final class Profile implements Domain\Profile\Repository
     /**
      * @param Domain\Profile\Name $name
      * @return Domain\Profile
-     * @throws ModelNotFoundException
+     * @throws ModelNotFoundException|Exception
      */
     public function findByName(Domain\Profile\Name $name): Domain\Profile
     {

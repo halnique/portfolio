@@ -3,7 +3,9 @@
 namespace Halnique\Portfolio\Domain;
 
 
-interface ValueObject extends \JsonSerializable
+use JsonSerializable;
+
+interface ValueObject extends JsonSerializable
 {
     public function value();
 

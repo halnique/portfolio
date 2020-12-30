@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 7.3
   - 7.4
 
 sudo: false
@@ -18,7 +17,7 @@ before_script:
   - chmod -R 777 build/logs
 
 script:
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_success:
   - travis_retry php vendor/bin/php-coveralls

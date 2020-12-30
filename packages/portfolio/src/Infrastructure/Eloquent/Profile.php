@@ -6,6 +6,7 @@ namespace Halnique\Portfolio\Infrastructure\Eloquent;
 use Halnique\Portfolio\Domain;
 use Halnique\Portfolio\Infrastructure;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
@@ -17,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read string twitter
  * @property-read string qiita
  * @property-read string hatena
- * @property-read \Illuminate\Database\Eloquent\Collection|ProfileTag[] profileTags
+ * @property-read Collection|ProfileTag[] profileTags
  * @method static Builder|self withTags()
  * @method static Builder|self nameOf(string $name)
  * @method self first()
