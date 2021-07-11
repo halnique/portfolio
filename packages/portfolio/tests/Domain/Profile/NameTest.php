@@ -2,6 +2,7 @@
 
 namespace HalniqueTest\Portfolio\Domain\Profile;
 
+use DomainException;
 use Halnique\Portfolio\Domain\Profile\Name;
 use HalniqueTest\Portfolio\TestCase;
 
@@ -10,7 +11,7 @@ class NameTest extends TestCase
     public function testOf()
     {
         $this->assertInstanceOf(Name::class, Name::of($this->faker()->asciify(str_repeat('*', Name::MAX_LENGTH))));
-        $this->expectException(\DomainException::class);
+        $this->expectException(DomainException::class);
         $this->assertInstanceOf(Name::class, Name::of($this->faker()->asciify(str_repeat('*', Name::MAX_LENGTH + 1))));
     }
 }

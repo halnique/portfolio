@@ -17,7 +17,8 @@ class ProfileTest extends TestCase
 
     public function test__construct()
     {
-        $eloquent = factory(Eloquent\Profile::class)->make();
+        /** @var Eloquent\Profile $eloquent */
+        $eloquent = Eloquent\Profile::factory()->make();
         $this->assertInstanceOf(Profile::class, new Profile($eloquent));
     }
 
@@ -25,8 +26,9 @@ class ProfileTest extends TestCase
     {
         $count = mt_rand(2, 5);
 
-        $eloquent = factory(Eloquent\Profile::class)->make();
-        factory(Eloquent\Profile::class, $count)->create();
+        /** @var Eloquent\Profile $eloquent */
+        $eloquent = Eloquent\Profile::factory()->make();
+        Eloquent\Profile::factory($count)->create();
 
         $profiles = (new Profile($eloquent))->findAll();
         $this->assertInstanceOf(Domain\ProfileList::class, $profiles);
@@ -39,7 +41,7 @@ class ProfileTest extends TestCase
         $name = Domain\Profile\Name::of($this->faker()->name);
 
         /** @var Eloquent\Profile $eloquent */
-        $eloquent = factory(Eloquent\Profile::class)->create([
+        $eloquent = Eloquent\Profile::factory()->create([
             'name' => $name,
         ]);
 
@@ -51,7 +53,8 @@ class ProfileTest extends TestCase
     public function testFindByName_exception()
     {
         $this->expectException(ModelNotFoundException::class);
-        $eloquent = factory(Eloquent\Profile::class)->make();
+        /** @var Eloquent\Profile $eloquent */
+        $eloquent = Eloquent\Profile::factory()->make();
         (new Profile($eloquent))->findByName(Domain\Profile\Name::of($this->faker()->word));
     }
 }

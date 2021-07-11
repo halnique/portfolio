@@ -2,6 +2,7 @@
 
 namespace HalniqueTest\Portfolio\Application\Controllers;
 
+use App\Entities\User;
 use Halnique\Portfolio\Infrastructure\Eloquent;
 use HalniqueTest\Portfolio\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -15,36 +16,39 @@ class ProfileTest extends TestCase
 
     public function testIndex()
     {
-        factory(Eloquent\Profile::class, mt_rand(2, 5))->create();
+        Eloquent\Profile::factory(mt_rand(2, 5))->create();
         $this->get('/api/profiles')
             ->assertStatus(Response::HTTP_OK);
     }
 
     public function testStore()
     {
-        $this->markTestIncomplete('TODO authenticate');
-        $this->post('/api/profiles')
+        /** @var User $user */
+        $user = User::factory()->create();
+        $this->actingAs($user)->post('/api/profiles')
             ->assertStatus(Response::HTTP_CREATED);
     }
 
     public function testShow()
     {
-        $profile = factory(Eloquent\Profile::class)->create()->toDomain();
+        $profile = Eloquent\Profile::factory()->create()->toDomain();
         $this->get("/api/profiles/{$profile->name()}")
             ->assertStatus(Response::HTTP_OK);
     }
 
     public function testUpdate()
     {
-        $this->markTestIncomplete('TODO authenticate');
-        $this->put("/api/profiles/{$this->faker()->name}")
+        /** @var User $user */
+        $user = User::factory()->create();
+        $this->actingAs($user)->put("/api/profiles/{$this->faker()->name}")
             ->assertStatus(Response::HTTP_NO_CONTENT);
     }
 
     public function testDestroy()
     {
-        $this->markTestIncomplete('TODO authenticate');
-        $this->delete("/api/profiles/{$this->faker()->name}")
+        /** @var User $user */
+        $user = User::factory()->create();
+        $this->actingAs($user)->delete("/api/profiles/{$this->faker()->name}")
             ->assertStatus(Response::HTTP_NO_CONTENT);
     }
 }
