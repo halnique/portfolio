@@ -3,7 +3,6 @@
 namespace HalniqueTest\Portfolio\Application\UseCases\Profile;
 
 use Halnique\Portfolio\Application\UseCases\Profile\FindByName;
-use Halnique\Portfolio\Domain;
 use HalniqueTest\Portfolio\Infrastructure;
 use HalniqueTest\Portfolio\TestCase;
 

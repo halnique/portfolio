@@ -4,6 +4,7 @@ namespace Halnique\Portfolio\Infrastructure\Eloquent;
 
 
 use Halnique\Portfolio\Domain\ToDomain;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 
 /**
@@ -11,4 +12,5 @@ use Illuminate\Database\Eloquent\Model as EloquentModel;
  */
 abstract class Model extends EloquentModel implements ToDomain
 {
+    use HasFactory;
 }

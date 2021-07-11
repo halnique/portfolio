@@ -2,6 +2,7 @@
 
 namespace HalniqueTest\Portfolio\Domain;
 
+use DomainException;
 use Halnique\Portfolio\Domain\Id as AbstractId;
 use HalniqueTest\Portfolio\TestCase;
 
@@ -14,7 +15,7 @@ class IdTest extends TestCase
     public function testOf()
     {
         $this->assertInstanceOf(AbstractId::class, Id::of($this->faker()->randomDigitNotNull));
-        $this->expectException(\DomainException::class);
+        $this->expectException(DomainException::class);
         $this->assertInstanceOf(AbstractId::class, Id::of(mt_rand(PHP_INT_MIN, 0)));
     }
 

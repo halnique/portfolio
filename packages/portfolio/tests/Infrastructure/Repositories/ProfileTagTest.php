@@ -15,7 +15,8 @@ class ProfileTagTest extends TestCase
 
     public function test__construct()
     {
-        $eloquent = factory(Eloquent\ProfileTag::class)->make();
+        /** @var Eloquent\ProfileTag $eloquent */
+        $eloquent = Eloquent\ProfileTag::factory()->make();
         $this->assertInstanceOf(ProfileTag::class, new ProfileTag($eloquent));
     }
 
@@ -25,8 +26,9 @@ class ProfileTagTest extends TestCase
 
         $count = mt_rand(2, 5);
 
-        $eloquent = factory(Eloquent\ProfileTag::class)->make();
-        factory(Eloquent\ProfileTag::class, $count)->create([
+        /** @var Eloquent\ProfileTag $eloquent */
+        $eloquent = Eloquent\ProfileTag::factory()->make();
+        Eloquent\ProfileTag::factory($count)->create([
             'profile_id' => $profileId,
         ]);
 
@@ -42,8 +44,9 @@ class ProfileTagTest extends TestCase
 
         $count = mt_rand(2, 5);
 
-        $eloquent = factory(Eloquent\ProfileTag::class)->make();
-        factory(Eloquent\ProfileTag::class, $count)->create([
+        /** @var Eloquent\ProfileTag $eloquent */
+        $eloquent = Eloquent\ProfileTag::factory()->make();
+        Eloquent\ProfileTag::factory($count)->create([
             'tag_id' => $tagId,
         ]);
 

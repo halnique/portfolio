@@ -15,7 +15,8 @@ class TagTest extends TestCase
 
     public function test__construct()
     {
-        $eloquent = factory(Eloquent\Tag::class)->make();
+        /** @var Eloquent\Tag $eloquent */
+        $eloquent = Eloquent\Tag::factory()->make();
         $this->assertInstanceOf(Tag::class, new Tag($eloquent));
     }
 
@@ -24,7 +25,7 @@ class TagTest extends TestCase
         $name = Domain\Tag\Name::of($this->faker()->name);
 
         /** @var Eloquent\Tag $eloquent */
-        $eloquent = factory(Eloquent\Tag::class)->create([
+        $eloquent = Eloquent\Tag::factory()->create([
             'name' => $name,
         ]);
 

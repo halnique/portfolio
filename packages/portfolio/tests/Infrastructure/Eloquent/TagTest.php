@@ -17,7 +17,7 @@ class TagTest extends TestCase
     public function testToDomain()
     {
         /** @var Tag $tag */
-        $tag = factory(Tag::class)->make([
+        $tag = Tag::factory()->make([
             'id' => $this->faker()->randomDigitNotNull,
         ]);
         $this->assertInstanceOf(Domain\Tag::class, $tag->toDomain());
@@ -26,10 +26,10 @@ class TagTest extends TestCase
     public function testProfileTags()
     {
         /** @var Tag $tag */
-        $tag = factory(Tag::class)->make([
+        $tag = Tag::factory()->make([
             'id' => $this->faker()->randomDigitNotNull,
         ]);
-        factory(ProfileTag::class, $this->faker()->randomDigit)->create([
+        ProfileTag::factory($this->faker()->randomDigit)->create([
             'tag_id' => $tag->id,
         ]);
         $this->assertInstanceOf(HasMany::class, $tag->profileTags());

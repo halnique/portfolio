@@ -18,12 +18,12 @@ class ProfileTest extends TestCase
     public function testToDomain()
     {
         /** @var Profile $profile */
-        $profile = factory(Profile::class)->make([
+        $profile = Profile::factory()->make([
             'id' => $this->faker()->randomDigitNotNull,
         ]);
         /** @var Tag $tag */
-        $tag = factory(Tag::class)->create();
-        factory(ProfileTag::class)->create([
+        $tag = Tag::factory()->create();
+        ProfileTag::factory()->create([
             'profile_id' => $profile->id,
             'tag_id' => $tag->id,
         ]);
@@ -33,10 +33,10 @@ class ProfileTest extends TestCase
     public function testProfileTags()
     {
         /** @var Profile $profile */
-        $profile = factory(Profile::class)->make([
+        $profile = Profile::factory()->make([
             'id' => $this->faker()->randomDigitNotNull,
         ]);
-        factory(ProfileTag::class, $this->faker()->randomDigit)->create([
+        ProfileTag::factory($this->faker()->randomDigit)->create([
             'profile_id' => $profile->id,
         ]);
         $this->assertInstanceOf(HasMany::class, $profile->profileTags());
